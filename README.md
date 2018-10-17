@@ -25,3 +25,6 @@
 >>>Chord transition
 >>>	from lucas -> 
 >>>Data from internet -> accurate
+
+>>>shit
+
