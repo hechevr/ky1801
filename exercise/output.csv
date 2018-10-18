@@ -1,84 +1,203 @@
-C,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-Db,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-D,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-Eb,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-E,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-F,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-Gb,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-G,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-Ab,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-A,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-Bb,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
-B,
-m,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.G: 'G'>]"
-,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.G: 'G'>]"
-aug,"[<Root.C: 'C'>, <Root.E: 'E'>, <Root.Ab: 'Ab'>]"
-dim,"[<Root.C: 'C'>, <Root.Eb: 'Eb'>, <Root.Gb: 'Gb'>]"
-sus2,"[<Root.C: 'C'>, <Root.D: 'D'>, <Root.G: 'G'>]"
-sus4,"[<Root.C: 'C'>, <Root.F: 'F'>, <Root.G: 'G'>]"
+C,,
+I,C E G ,C E G B 
+II,D F A ,D F A C 
+III,E G B ,E G B D 
+IV,F A C ,F A C E 
+V,G B D ,G B D F 
+bVI,Ab C Eb ,
+VI,A C E ,A C E G 
+GVI,Ab C Eb F# ,
+FVI,Ab C D F# ,
+ItVI,Ab C F# ,
+VII,B D F ,B D F A 
+DVII,,B D F Ab 
+D,,
+I,D F# A ,D F# A C# 
+II,E G B ,E G B D 
+III,F# A C# ,F# A C# E 
+IV,G B D ,G B D F# 
+V,A C# E ,A C# E G 
+bVI,Bb D F ,
+VI,B D F# ,B D F# A 
+GVI,Bb D F G# ,
+FVI,Bb D E G# ,
+ItVI,Bb D G# ,
+VII,C# E G ,C# E G B 
+DVII,,C# E G Bb 
+E,,
+I,E G# B ,E G# B D# 
+II,F# A C# ,F# A C# E 
+III,G# B D# ,G# B D# F# 
+IV,A C# E ,A C# E G# 
+V,B D# F# ,B D# F# A 
+bVI,C E G ,
+VI,C# E G# ,C# E G# B 
+GVI,C E G A# ,
+FVI,C E F# A# ,
+ItVI,C E A# ,
+VII,D# F# A ,D# F# A C# 
+DVII,,D# F# A C 
+F,,
+I,F A C ,F A C E 
+II,G Bb D ,G Bb D F 
+III,A C E ,A C E G 
+IV,Bb D F ,Bb D F A 
+V,C E G ,C E G Bb 
+bVI,Db F Ab ,
+VI,D F A ,D F A C 
+GVI,Db F Ab B ,
+FVI,Db F G B ,
+ItVI,Db F B ,
+VII,E G Bb ,E G Bb D 
+DVII,,E G Bb Db 
+G,,
+I,G B D ,G B D F# 
+II,A C E ,A C E G 
+III,B D F# ,B D F# A 
+IV,C E G ,C E G B 
+V,D F# A ,D F# A C 
+bVI,Eb G Bb ,
+VI,E G B ,E G B D 
+GVI,Eb G Bb C# ,
+FVI,Eb G A C# ,
+ItVI,Eb G C# ,
+VII,F# A C ,F# A C E 
+DVII,,F# A C Eb 
+A,,
+I,A C# E ,A C# E G# 
+II,B D F# ,B D F# A 
+III,C# E G# ,C# E G# B 
+IV,D F# A ,D F# A C# 
+V,E G# B ,E G# B D 
+bVI,F A C ,
+VI,F# A C# ,F# A C# E 
+GVI,F A C D# ,
+FVI,F A B D# ,
+ItVI,F A D# ,
+VII,G# B D ,G# B D F# 
+DVII,,G# B D F 
+B,,
+I,B D# F# ,B D# F# A# 
+II,C# E G# ,C# E G# B 
+III,D# F# A# ,D# F# A# C# 
+IV,E G# B ,E G# B D# 
+V,F# A# C# ,F# A# C# E 
+bVI,G B D ,
+VI,G# B D# ,G# B D# F# 
+GVI,G B D E# ,
+FVI,G B C# E# ,
+ItVI,G B E# ,
+VII,A# C# E ,A# C# E G#
+DVII,,A# C# E G 
+c,,
+I,C Eb G ,C Eb G Bb 
+I+,C E G ,
+bII,Db F Ab ,
+II,D F Ab ,D F Ab C 
+III,Eb G Bb ,Eb G Bb D 
+IV,F Ab C ,F Ab C Eb 
+IV+,F A C ,
+V,G Bb D ,G Bb D F 
+V+,G B D ,G B D F 
+VI,Ab C Eb ,Ab C Eb G 
+GVI,Ab C Eb F# ,
+FVI,Ab C D F# ,
+ItVI,Ab C F# ,
+VII,Bb D F ,Bb D F Ab 
+DVII,,B D F Ab 
+d,,
+I,D F A ,D F A C 
+I+,D F# A ,
+bII,Eb G Bb ,
+II,E G Bb ,E G Bb D 
+III,F A C ,F A C E 
+IV,G Bb D ,G Bb D F 
+IV+,G B D ,
+V,A C E ,A C E G 
+V+,A C# E ,A C# E G 
+VI,Bb D F ,Bb D F A 
+GVI,Bb D F G# ,
+FVI,Bb D E G# ,
+ItVI,Bb D G# ,
+VII,C E G ,C E G Bb 
+DVII,,C# E G Bb 
+e,,
+I,E G B ,E G B D 
+I+,E G# B ,
+bII,F A C ,
+II,F# A C ,F# A C E 
+III,G B D ,G B D F# 
+IV,A C E ,A C E G 
+IV+,A C# E ,
+V,B D F# ,B D F# A 
+V+,B D# F# ,B D# F# A 
+VI,C E G ,C E G B 
+GVI,C E G A# ,
+FVI,C E F# A# ,
+ItVI,C E A# ,
+VII,D F# A ,D F# A C 
+DVII,,D# F# A C 
+f,,
+I,F Ab C ,F Ab C Eb 
+I+,F A C ,
+bII,Gb Bb Db ,
+II,G Bb Db ,G Bb Db F 
+III,Ab C Eb ,Ab C Eb G 
+IV,Bb Db F ,Bb Db F Ab 
+IV+,Bb D F ,
+V,C Eb G ,C Eb G Bb 
+V+,C E G ,C E G Bb 
+VI,Db F Ab ,Db F Ab C 
+GVI,Db F Ab B ,
+FVI,Db F G B ,
+ItVI,Db F B ,
+VII,Eb G Bb ,Eb G Bb Db 
+DVII,,E G Bb Db 
+g,,
+I,G Bb D ,G Bb D F 
+I+,G B D ,
+bII,Ab C Eb ,
+II,A C Eb ,A C Eb G 
+III,Bb D F ,Bb D F A 
+IV,C Eb G ,C Eb G Bb 
+IV+,C E G ,
+V,D F A ,D F A C 
+V+,D F# A ,D F# A C 
+VI,Eb G Bb ,Eb G Bb D 
+GVI,Eb G Bb C# ,
+FVI,Eb G A C# ,
+ItVI,Eb G C# ,
+VII,F A C ,F A C Eb 
+DVII,,F# A C Eb 
+a,,
+I,A C E ,A C E G 
+I+,A C# E ,
+bII,Bb D F ,
+II,B D F ,B D F A 
+III,C E G ,C E G B 
+IV,D F A ,D F A C 
+IV+,D F# A ,
+V,E G B ,E G B D 
+V+,E G# B ,E G# B D 
+VI,F A C ,F A C E 
+GVI,F A C D# ,
+FVI,F A B D# ,
+ItVI,F A D# ,
+VII,G B D ,G B D F 
+DVII,,G# B D F 
+b,,
+I,B D F# ,B D F# A 
+I+,B D# F# ,
+bII,C E G ,
+II,C# E G ,C# E G B 
+III,D F# A ,D F# A C# 
+IV,E G B ,E G B D 
+IV+,E G# B ,
+V,F# A C# ,F# A C# E 
+V+,F# A# C# ,F# A# C# E 
+VI,G B D ,G B D F# 
+GVI,G B D E# ,
+FVI,G B C# E# ,
+ItVI,G B E# ,
+VII,A C# E ,A C# E G 
+DVII,,A# C# E G 

@@ -275,3 +275,4 @@ def chord_id(r, d):
     # print('quit to quit')
     return chordNotes
 
+# main()
