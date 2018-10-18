@@ -1,14 +1,15 @@
 ** This repo is for FYP in CUHK **
 
->>>Meeting
->>>20/9/2018
->>>Given note, return chord
->>>Using classical express of note (Roman numeral)
->>>Find data with chordmark as correct reference
->>>Find data with 4 or 5 instrument
+> Meeting
+
+>20/9/2018
+>>Given note, return chord
+>>Using classical express of note (Roman numeral)
+>>Find data with chordmark as correct reference
+>>Find data with 4 or 5 instrument
 >>>
->>>Harmony exam textbook (common) -> reduced version: musicscore 
->>>Maybe pdf -> xml
+>>Harmony exam textbook (common) -> reduced version: musicscore 
+>>Maybe pdf -> xml
 >>>
 >>>10/4/2018
 >>>Question：
@@ -26,5 +27,8 @@
 >>>	from lucas -> 
 >>>Data from internet -> accurate
 
->>>shit
-
+> 18/10/2018
+>> Modeling work: LSTM
+>> Expected accuracy: 80%
+>> Chord matching
+>> Next sem: data conversion
