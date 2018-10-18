@@ -26,7 +26,7 @@
 >> Chord transition
 >> 	from lucas -> 
 >> Data from internet -> accurate
-
+>
 > 18/10/2018
 >> Modeling work: LSTM
 >> Expected accuracy: 80%
