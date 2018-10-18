@@ -11,21 +11,21 @@
 >>Harmony exam textbook (common) -> reduced version: musicscore 
 >>Maybe pdf -> xml
 >>>
->>>10/4/2018
->>>Question：
->>>1.flat note
->>>2.how to identify the chord with note
->>>3. Roman numeral express: upper case and lower case
->>>4. Aug and dim
+> 10/4/2018
+>> Question：
+>> 1.flat note
+>> 2.how to identify the chord with note
+>> 3. Roman numeral express: upper case and lower case
+>> 4. Aug and dim
 >>>
->>>Absolute interval to decide the expression(flat sharp problem)
->>>Only triad and seventh chord
->>>Chord sheet is complete
->>>Music department harmony textbook
->>>Send the table to lucas
->>>Chord transition
->>>	from lucas -> 
->>>Data from internet -> accurate
+>> Absolute interval to decide the expression(flat sharp problem)
+>> Only triad and seventh chord
+>> Chord sheet is complete
+>> Music department harmony textbook
+>> Send the table to lucas
+>> Chord transition
+>> 	from lucas -> 
+>> Data from internet -> accurate
 
 > 18/10/2018
 >> Modeling work: LSTM
