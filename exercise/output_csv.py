@@ -1,7 +1,7 @@
 import numpy as np
 import csv
 from chord_lib import chord_id
-from romanAnalysis import ChordToNote
+from romanAnalysis1 import ChordToNote
 
 # root list
 root_list = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
@@ -23,13 +23,13 @@ def main():
         for row in table:
             writer.writerow(row)
 
-mod_great_list = ["C", "D", "E", "F", "G", "A", "B"]
-mod_small_list = ["c", "d", "e", "f", "g", "a", "b"]
+mod_great_list = ["C","C#",'Cb', "D",'D#','Db', "E",'E#','Eb' ,"F",'F#' ,'Fb',"G",'G#','Gb', "A",'A#','Ab', "B",'B#','Bb']
+mod_small_list = ["c",'c#','cb', "d",'d#','db' ,"e",'e#','eb' ,"f",'f#','fb', "g",'g#','gb', "a",'a#','ab' "b",'b#','bb']
 # mod_great_list = ["C", "D", "E", "F", "G"]
 # mod_small_list = ["c", "d"]
-small_list = ["I", "I+", "bII", "II", "III", "IV", "IV+", "V", "V+", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
-great_list = ["I", "II", "III", "IV", "V", "bVI", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
-three_chord = ["I", "I+", "bII", "II", "III", "IV", "IV+", "V", "V+", "VI", "bVI", "GVI", "FVI", "ItVI", "VII"]
+small_list = ["I", "I+", "qII", "II", "III", "IV", "IV+", "V", "V+", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
+great_list = ["I", "II", "III", "IV", "V", "qVI", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
+three_chord = ["I", "I+", "qII", "II", "III", "IV", "IV+", "V", "V+", "VI", "qVI", "GVI", "FVI", "ItVI", "VII"]
 seven_chord = ["I", "II", "III", "IV", "V", "V+", "VI", "VII", "DVII"]
 
 def wtf():
