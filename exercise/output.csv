@@ -1,16 +1,16 @@
 C,,
-I,"['C', 'E', 'G']","['C', 'E', 'G', 'B']"
-II,"['D', 'F', 'A']","['D', 'F', 'A', 'C']"
-III,"['E', 'G', 'B']","['E', 'G', 'B', 'D']"
-IV,"['F', 'A', 'C']","['F', 'A', 'C', 'E']"
-V,"['G', 'B', 'D']","['G', 'B', 'D', 'F']"
-qVI,"['Ab', 'C', 'Eb']",
-VI,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-GVI,"['Ab', 'C', 'Eb', 'F#']",
-FVI,"['Ab', 'C', 'D', 'F#']",
-ItVI,"['Ab', 'C', 'F#']",
-VII,"['B', 'D', 'F']","['B', 'D', 'F', 'A']"
-DVII,,"['B', 'D', 'F', 'Ab']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 C#,,
 I,"['C#', 'E#', 'G#']","['C#', 'E#', 'G#', 'B#']"
 II,"['D#', 'F#', 'A#']","['D#', 'F#', 'A#', 'C#']"
@@ -38,18 +38,18 @@ ItVI,"['Abb', 'Cb', 'F']",
 VII,"['Bb', 'Db', 'Fb']","['Bb', 'Db', 'Fb', 'Ab']"
 DVII,,"['Bb', 'Db', 'Fb', 'Abb']"
 D,,
-I,"['D', 'F#', 'A']","['D', 'F#', 'A', 'C#']"
-II,"['E', 'G', 'B']","['E', 'G', 'B', 'D']"
-III,"['F#', 'A', 'C#']","['F#', 'A', 'C#', 'E']"
-IV,"['G', 'B', 'D']","['G', 'B', 'D', 'F#']"
-V,"['A', 'C#', 'E']","['A', 'C#', 'E', 'G']"
-qVI,"['Bb', 'D', 'F']",
-VI,"['B', 'D', 'F#']","['B', 'D', 'F#', 'A']"
-GVI,"['Bb', 'D', 'F', 'G#']",
-FVI,"['Bb', 'D', 'E', 'G#']",
-ItVI,"['Bb', 'D', 'G#']",
-VII,"['C#', 'E', 'G']","['C#', 'E', 'G', 'B']"
-DVII,,"['C#', 'E', 'G', 'Bb']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 D#,,
 I,"['D#', 'F##', 'A#']","['D#', 'F##', 'A#', 'C##']"
 II,"['E#', 'G#', 'B#']","['E#', 'G#', 'B#', 'D#']"
@@ -77,18 +77,18 @@ ItVI,"['Bbb', 'Db', 'G']",
 VII,"['C', 'Eb', 'Gb']","['C', 'Eb', 'Gb', 'Bb']"
 DVII,,"['C', 'Eb', 'Gb', 'Bbb']"
 E,,
-I,"['E', 'G#', 'B']","['E', 'G#', 'B', 'D#']"
-II,"['F#', 'A', 'C#']","['F#', 'A', 'C#', 'E']"
-III,"['G#', 'B', 'D#']","['G#', 'B', 'D#', 'F#']"
-IV,"['A', 'C#', 'E']","['A', 'C#', 'E', 'G#']"
-V,"['B', 'D#', 'F#']","['B', 'D#', 'F#', 'A']"
-qVI,"['C', 'E', 'G']",
-VI,"['C#', 'E', 'G#']","['C#', 'E', 'G#', 'B']"
-GVI,"['C', 'E', 'G', 'A#']",
-FVI,"['C', 'E', 'F#', 'A#']",
-ItVI,"['C', 'E', 'A#']",
-VII,"['D#', 'F#', 'A']","['D#', 'F#', 'A', 'C#']"
-DVII,,"['D#', 'F#', 'A', 'C']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 E#,,
 I,"['E#', 'G##', 'B#']","['E#', 'G##', 'B#', 'D##']"
 II,"['F##', 'A#', 'C##']","['F##', 'A#', 'C##', 'E#']"
@@ -116,18 +116,18 @@ ItVI,"['Cb', 'Eb', 'A']",
 VII,"['D', 'F', 'Ab']","['D', 'F', 'Ab', 'C']"
 DVII,,"['D', 'F', 'Ab', 'Cb']"
 F,,
-I,"['F', 'A', 'C']","['F', 'A', 'C', 'E']"
-II,"['G', 'Bb', 'D']","['G', 'Bb', 'D', 'F']"
-III,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-IV,"['Bb', 'D', 'F']","['Bb', 'D', 'F', 'A']"
-V,"['C', 'E', 'G']","['C', 'E', 'G', 'Bb']"
-qVI,"['Db', 'F', 'Ab']",
-VI,"['D', 'F', 'A']","['D', 'F', 'A', 'C']"
-GVI,"['Db', 'F', 'Ab', 'B']",
-FVI,"['Db', 'F', 'G', 'B']",
-ItVI,"['Db', 'F', 'B']",
-VII,"['E', 'G', 'Bb']","['E', 'G', 'Bb', 'D']"
-DVII,,"['E', 'G', 'Bb', 'Db']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 F#,,
 I,"['F#', 'A#', 'C#']","['F#', 'A#', 'C#', 'E#']"
 II,"['G#', 'B', 'D#']","['G#', 'B', 'D#', 'F#']"
@@ -155,18 +155,18 @@ ItVI,"['Dbb', 'Fb', 'Bb']",
 VII,"['Eb', 'Gb', 'Bbb']","['Eb', 'Gb', 'Bbb', 'Db']"
 DVII,,"['Eb', 'Gb', 'Bbb', 'Dbb']"
 G,,
-I,"['G', 'B', 'D']","['G', 'B', 'D', 'F#']"
-II,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-III,"['B', 'D', 'F#']","['B', 'D', 'F#', 'A']"
-IV,"['C', 'E', 'G']","['C', 'E', 'G', 'B']"
-V,"['D', 'F#', 'A']","['D', 'F#', 'A', 'C']"
-qVI,"['Eb', 'G', 'Bb']",
-VI,"['E', 'G', 'B']","['E', 'G', 'B', 'D']"
-GVI,"['Eb', 'G', 'Bb', 'C#']",
-FVI,"['Eb', 'G', 'A', 'C#']",
-ItVI,"['Eb', 'G', 'C#']",
-VII,"['F#', 'A', 'C']","['F#', 'A', 'C', 'E']"
-DVII,,"['F#', 'A', 'C', 'Eb']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 G#,,
 I,"['G#', 'B#', 'D#']","['G#', 'B#', 'D#', 'F##']"
 II,"['A#', 'C#', 'E#']","['A#', 'C#', 'E#', 'G#']"
@@ -194,18 +194,18 @@ ItVI,"['Ebb', 'Gb', 'C']",
 VII,"['F', 'Ab', 'Cb']","['F', 'Ab', 'Cb', 'Eb']"
 DVII,,"['F', 'Ab', 'Cb', 'Ebb']"
 A,,
-I,"['A', 'C#', 'E']","['A', 'C#', 'E', 'G#']"
-II,"['B', 'D', 'F#']","['B', 'D', 'F#', 'A']"
-III,"['C#', 'E', 'G#']","['C#', 'E', 'G#', 'B']"
-IV,"['D', 'F#', 'A']","['D', 'F#', 'A', 'C#']"
-V,"['E', 'G#', 'B']","['E', 'G#', 'B', 'D']"
-qVI,"['F', 'A', 'C']",
-VI,"['F#', 'A', 'C#']","['F#', 'A', 'C#', 'E']"
-GVI,"['F', 'A', 'C', 'D#']",
-FVI,"['F', 'A', 'B', 'D#']",
-ItVI,"['F', 'A', 'D#']",
-VII,"['G#', 'B', 'D']","['G#', 'B', 'D', 'F#']"
-DVII,,"['G#', 'B', 'D', 'F']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 A#,,
 I,"['A#', 'C##', 'E#']","['A#', 'C##', 'E#', 'G##']"
 II,"['B#', 'D#', 'F##']","['B#', 'D#', 'F##', 'A#']"
@@ -233,18 +233,18 @@ ItVI,"['Fb', 'Ab', 'D']",
 VII,"['G', 'Bb', 'Db']","['G', 'Bb', 'Db', 'F']"
 DVII,,"['G', 'Bb', 'Db', 'Fb']"
 B,,
-I,"['B', 'D#', 'F#']","['B', 'D#', 'F#', 'A#']"
-II,"['C#', 'E', 'G#']","['C#', 'E', 'G#', 'B']"
-III,"['D#', 'F#', 'A#']","['D#', 'F#', 'A#', 'C#']"
-IV,"['E', 'G#', 'B']","['E', 'G#', 'B', 'D#']"
-V,"['F#', 'A#', 'C#']","['F#', 'A#', 'C#', 'E']"
-qVI,"['G', 'B', 'D']",
-VI,"['G#', 'B', 'D#']","['G#', 'B', 'D#', 'F#']"
-GVI,"['G', 'B', 'D', 'E#']",
-FVI,"['G', 'B', 'C#', 'E#']",
-ItVI,"['G', 'B', 'E#']",
-VII,"['A#', 'C#', 'E']","['A#', 'C#', 'E', 'G#']"
-DVII,,"['A#', 'C#', 'E', 'G']"
+I,error,error
+II,error,error
+III,error,error
+IV,error,error
+V,error,error
+qVI,error,
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 B#,,
 I,"['B#', 'D##', 'F##']","['B#', 'D##', 'F##', 'A##']"
 II,"['C##', 'E#', 'G##']","['C##', 'E#', 'G##', 'B#']"
@@ -272,21 +272,21 @@ ItVI,"['Gb', 'Bb', 'E']",
 VII,"['A', 'C', 'Eb']","['A', 'C', 'Eb', 'G']"
 DVII,,"['A', 'C', 'Eb', 'Gb']"
 c,,
-I,"['C', 'Eb', 'G']","['C', 'Eb', 'G', 'Bb']"
-I+,"['C', 'E', 'G']",
-qII,"['Db', 'F', 'Ab']",
-II,"['D', 'F', 'Ab']","['D', 'F', 'Ab', 'C']"
-III,"['Eb', 'G', 'Bb']","['Eb', 'G', 'Bb', 'D']"
-IV,"['F', 'Ab', 'C']","['F', 'Ab', 'C', 'Eb']"
-IV+,"['F', 'A', 'C']",
-V,"['G', 'Bb', 'D']","['G', 'Bb', 'D', 'F']"
-V+,"['G', 'B', 'D']","['G', 'B', 'D', 'F']"
-VI,"['Ab', 'C', 'Eb']","['Ab', 'C', 'Eb', 'G']"
-GVI,"['Ab', 'C', 'Eb', 'F#']",
-FVI,"['Ab', 'C', 'D', 'F#']",
-ItVI,"['Ab', 'C', 'F#']",
-VII,"['Bb', 'D', 'F']","['Bb', 'D', 'F', 'Ab']"
-DVII,,"['B', 'D', 'F', 'Ab']"
+I,error,error
+I+,error,
+qII,error,
+II,error,error
+III,error,error
+IV,error,error
+IV+,error,
+V,error,error
+V+,error,error
+VI,error,error
+GVI,error,
+FVI,error,
+ItVI,error,
+VII,error,error
+DVII,,error
 c#,,
 I,"['C#', 'E', 'G#']","['C#', 'E', 'G#', 'B']"
 I+,"['C#', 'E#', 'G#']",
@@ -304,6 +304,22 @@ ItVI,"['A', 'C#', 'F##']",
 VII,"['B', 'D#', 'F#']","['B', 'D#', 'F#', 'A']"
 DVII,,"['B#', 'D#', 'F#', 'A']"
 cb,,
+I,"['Cb', 'Ebb', 'Gb']","['Cb', 'Ebb', 'Gb', 'Bbb']"
+I+,"['Cb', 'Eb', 'Gb']",
+qII,"['Dbb', 'Fb', 'Abb']",
+II,"['Db', 'Fb', 'Abb']","['Db', 'Fb', 'Abb', 'Cb']"
+III,"['Ebb', 'Gb', 'Bbb']","['Ebb', 'Gb', 'Bbb', 'Db']"
+IV,"['Fb', 'Abb', 'Cb']","['Fb', 'Abb', 'Cb', 'Ebb']"
+IV+,"['Fb', 'Ab', 'Cb']",
+V,"['Gb', 'Bbb', 'Db']","['Gb', 'Bbb', 'Db', 'Fb']"
+V+,"['Gb', 'Bb', 'Db']","['Gb', 'Bb', 'Db', 'Fb']"
+VI,"['Abb', 'Cb', 'Ebb']","['Abb', 'Cb', 'Ebb', 'Gb']"
+GVI,"['Abb', 'Cb', 'Ebb', 'F']",
+FVI,"['Abb', 'Cb', 'Db', 'F']",
+ItVI,"['Abb', 'Cb', 'F']",
+VII,"['Bbb', 'Db', 'Fb']","['Bbb', 'Db', 'Fb', 'Abb']"
+DVII,,"['Bb', 'Db', 'Fb', 'Abb']"
+d,,
 I,error,error
 I+,error,
 qII,error,
@@ -319,22 +335,6 @@ FVI,error,
 ItVI,error,
 VII,error,error
 DVII,,error
-d,,
-I,"['D', 'F', 'A']","['D', 'F', 'A', 'C']"
-I+,"['D', 'F#', 'A']",
-qII,"['Eb', 'G', 'Bb']",
-II,"['E', 'G', 'Bb']","['E', 'G', 'Bb', 'D']"
-III,"['F', 'A', 'C']","['F', 'A', 'C', 'E']"
-IV,"['G', 'Bb', 'D']","['G', 'Bb', 'D', 'F']"
-IV+,"['G', 'B', 'D']",
-V,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-V+,"['A', 'C#', 'E']","['A', 'C#', 'E', 'G']"
-VI,"['Bb', 'D', 'F']","['Bb', 'D', 'F', 'A']"
-GVI,"['Bb', 'D', 'F', 'G#']",
-FVI,"['Bb', 'D', 'E', 'G#']",
-ItVI,"['Bb', 'D', 'G#']",
-VII,"['C', 'E', 'G']","['C', 'E', 'G', 'Bb']"
-DVII,,"['C#', 'E', 'G', 'Bb']"
 d#,,
 I,"['D#', 'F#', 'A#']","['D#', 'F#', 'A#', 'C#']"
 I+,"['D#', 'F##', 'A#']",
@@ -352,6 +352,22 @@ ItVI,"['B', 'D#', 'G##']",
 VII,"['C#', 'E#', 'G#']","['C#', 'E#', 'G#', 'B']"
 DVII,,"['C##', 'E#', 'G#', 'B']"
 db,,
+I,"['Db', 'Fb', 'Ab']","['Db', 'Fb', 'Ab', 'Cb']"
+I+,"['Db', 'F', 'Ab']",
+qII,"['Ebb', 'Gb', 'Bbb']",
+II,"['Eb', 'Gb', 'Bbb']","['Eb', 'Gb', 'Bbb', 'Db']"
+III,"['Fb', 'Ab', 'Cb']","['Fb', 'Ab', 'Cb', 'Eb']"
+IV,"['Gb', 'Bbb', 'Db']","['Gb', 'Bbb', 'Db', 'Fb']"
+IV+,"['Gb', 'Bb', 'Db']",
+V,"['Ab', 'Cb', 'Eb']","['Ab', 'Cb', 'Eb', 'Gb']"
+V+,"['Ab', 'C', 'Eb']","['Ab', 'C', 'Eb', 'Gb']"
+VI,"['Bbb', 'Db', 'Fb']","['Bbb', 'Db', 'Fb', 'Ab']"
+GVI,"['Bbb', 'Db', 'Fb', 'G']",
+FVI,"['Bbb', 'Db', 'Eb', 'G']",
+ItVI,"['Bbb', 'Db', 'G']",
+VII,"['Cb', 'Eb', 'Gb']","['Cb', 'Eb', 'Gb', 'Bbb']"
+DVII,,"['C', 'Eb', 'Gb', 'Bbb']"
+e,,
 I,error,error
 I+,error,
 qII,error,
@@ -367,22 +383,6 @@ FVI,error,
 ItVI,error,
 VII,error,error
 DVII,,error
-e,,
-I,"['E', 'G', 'B']","['E', 'G', 'B', 'D']"
-I+,"['E', 'G#', 'B']",
-qII,"['F', 'A', 'C']",
-II,"['F#', 'A', 'C']","['F#', 'A', 'C', 'E']"
-III,"['G', 'B', 'D']","['G', 'B', 'D', 'F#']"
-IV,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-IV+,"['A', 'C#', 'E']",
-V,"['B', 'D', 'F#']","['B', 'D', 'F#', 'A']"
-V+,"['B', 'D#', 'F#']","['B', 'D#', 'F#', 'A']"
-VI,"['C', 'E', 'G']","['C', 'E', 'G', 'B']"
-GVI,"['C', 'E', 'G', 'A#']",
-FVI,"['C', 'E', 'F#', 'A#']",
-ItVI,"['C', 'E', 'A#']",
-VII,"['D', 'F#', 'A']","['D', 'F#', 'A', 'C']"
-DVII,,"['D#', 'F#', 'A', 'C']"
 e#,,
 I,"['E#', 'G#', 'B#']","['E#', 'G#', 'B#', 'D#']"
 I+,"['E#', 'G##', 'B#']",
@@ -400,6 +400,22 @@ ItVI,"['C#', 'E#', 'A##']",
 VII,"['D#', 'F##', 'A#']","['D#', 'F##', 'A#', 'C#']"
 DVII,,"['D##', 'F##', 'A#', 'C#']"
 eb,,
+I,"['Eb', 'Gb', 'Bb']","['Eb', 'Gb', 'Bb', 'Db']"
+I+,"['Eb', 'G', 'Bb']",
+qII,"['Fb', 'Ab', 'Cb']",
+II,"['F', 'Ab', 'Cb']","['F', 'Ab', 'Cb', 'Eb']"
+III,"['Gb', 'Bb', 'Db']","['Gb', 'Bb', 'Db', 'F']"
+IV,"['Ab', 'Cb', 'Eb']","['Ab', 'Cb', 'Eb', 'Gb']"
+IV+,"['Ab', 'C', 'Eb']",
+V,"['Bb', 'Db', 'F']","['Bb', 'Db', 'F', 'Ab']"
+V+,"['Bb', 'D', 'F']","['Bb', 'D', 'F', 'Ab']"
+VI,"['Cb', 'Eb', 'Gb']","['Cb', 'Eb', 'Gb', 'Bb']"
+GVI,"['Cb', 'Eb', 'Gb', 'A']",
+FVI,"['Cb', 'Eb', 'F', 'A']",
+ItVI,"['Cb', 'Eb', 'A']",
+VII,"['Db', 'F', 'Ab']","['Db', 'F', 'Ab', 'Cb']"
+DVII,,"['D', 'F', 'Ab', 'Cb']"
+f,,
 I,error,error
 I+,error,
 qII,error,
@@ -415,22 +431,6 @@ FVI,error,
 ItVI,error,
 VII,error,error
 DVII,,error
-f,,
-I,"['F', 'Ab', 'C']","['F', 'Ab', 'C', 'Eb']"
-I+,"['F', 'A', 'C']",
-qII,"['Gb', 'Bb', 'Db']",
-II,"['G', 'Bb', 'Db']","['G', 'Bb', 'Db', 'F']"
-III,"['Ab', 'C', 'Eb']","['Ab', 'C', 'Eb', 'G']"
-IV,"['Bb', 'Db', 'F']","['Bb', 'Db', 'F', 'Ab']"
-IV+,"['Bb', 'D', 'F']",
-V,"['C', 'Eb', 'G']","['C', 'Eb', 'G', 'Bb']"
-V+,"['C', 'E', 'G']","['C', 'E', 'G', 'Bb']"
-VI,"['Db', 'F', 'Ab']","['Db', 'F', 'Ab', 'C']"
-GVI,"['Db', 'F', 'Ab', 'B']",
-FVI,"['Db', 'F', 'G', 'B']",
-ItVI,"['Db', 'F', 'B']",
-VII,"['Eb', 'G', 'Bb']","['Eb', 'G', 'Bb', 'Db']"
-DVII,,"['E', 'G', 'Bb', 'Db']"
 f#,,
 I,"['F#', 'A', 'C#']","['F#', 'A', 'C#', 'E']"
 I+,"['F#', 'A#', 'C#']",
@@ -448,6 +448,22 @@ ItVI,"['D', 'F#', 'B#']",
 VII,"['E', 'G#', 'B']","['E', 'G#', 'B', 'D']"
 DVII,,"['E#', 'G#', 'B', 'D']"
 fb,,
+I,"['Fb', 'Abb', 'Cb']","['Fb', 'Abb', 'Cb', 'Ebb']"
+I+,"['Fb', 'Ab', 'Cb']",
+qII,"['Gbb', 'Bbb', 'Dbb']",
+II,"['Gb', 'Bbb', 'Dbb']","['Gb', 'Bbb', 'Dbb', 'Fb']"
+III,"['Abb', 'Cb', 'Ebb']","['Abb', 'Cb', 'Ebb', 'Gb']"
+IV,"['Bbb', 'Dbb', 'Fb']","['Bbb', 'Dbb', 'Fb', 'Abb']"
+IV+,"['Bbb', 'Db', 'Fb']",
+V,"['Cb', 'Ebb', 'Gb']","['Cb', 'Ebb', 'Gb', 'Bbb']"
+V+,"['Cb', 'Eb', 'Gb']","['Cb', 'Eb', 'Gb', 'Bbb']"
+VI,"['Dbb', 'Fb', 'Abb']","['Dbb', 'Fb', 'Abb', 'Cb']"
+GVI,"['Dbb', 'Fb', 'Abb', 'Bb']",
+FVI,"['Dbb', 'Fb', 'Gb', 'Bb']",
+ItVI,"['Dbb', 'Fb', 'Bb']",
+VII,"['Ebb', 'Gb', 'Bbb']","['Ebb', 'Gb', 'Bbb', 'Dbb']"
+DVII,,"['Eb', 'Gb', 'Bbb', 'Dbb']"
+g,,
 I,error,error
 I+,error,
 qII,error,
@@ -463,22 +479,6 @@ FVI,error,
 ItVI,error,
 VII,error,error
 DVII,,error
-g,,
-I,"['G', 'Bb', 'D']","['G', 'Bb', 'D', 'F']"
-I+,"['G', 'B', 'D']",
-qII,"['Ab', 'C', 'Eb']",
-II,"['A', 'C', 'Eb']","['A', 'C', 'Eb', 'G']"
-III,"['Bb', 'D', 'F']","['Bb', 'D', 'F', 'A']"
-IV,"['C', 'Eb', 'G']","['C', 'Eb', 'G', 'Bb']"
-IV+,"['C', 'E', 'G']",
-V,"['D', 'F', 'A']","['D', 'F', 'A', 'C']"
-V+,"['D', 'F#', 'A']","['D', 'F#', 'A', 'C']"
-VI,"['Eb', 'G', 'Bb']","['Eb', 'G', 'Bb', 'D']"
-GVI,"['Eb', 'G', 'Bb', 'C#']",
-FVI,"['Eb', 'G', 'A', 'C#']",
-ItVI,"['Eb', 'G', 'C#']",
-VII,"['F', 'A', 'C']","['F', 'A', 'C', 'Eb']"
-DVII,,"['F#', 'A', 'C', 'Eb']"
 g#,,
 I,"['G#', 'B', 'D#']","['G#', 'B', 'D#', 'F#']"
 I+,"['G#', 'B#', 'D#']",
@@ -496,6 +496,22 @@ ItVI,"['E', 'G#', 'C##']",
 VII,"['F#', 'A#', 'C#']","['F#', 'A#', 'C#', 'E']"
 DVII,,"['F##', 'A#', 'C#', 'E']"
 gb,,
+I,"['Gb', 'Bbb', 'Db']","['Gb', 'Bbb', 'Db', 'Fb']"
+I+,"['Gb', 'Bb', 'Db']",
+qII,"['Abb', 'Cb', 'Ebb']",
+II,"['Ab', 'Cb', 'Ebb']","['Ab', 'Cb', 'Ebb', 'Gb']"
+III,"['Bbb', 'Db', 'Fb']","['Bbb', 'Db', 'Fb', 'Ab']"
+IV,"['Cb', 'Ebb', 'Gb']","['Cb', 'Ebb', 'Gb', 'Bbb']"
+IV+,"['Cb', 'Eb', 'Gb']",
+V,"['Db', 'Fb', 'Ab']","['Db', 'Fb', 'Ab', 'Cb']"
+V+,"['Db', 'F', 'Ab']","['Db', 'F', 'Ab', 'Cb']"
+VI,"['Ebb', 'Gb', 'Bbb']","['Ebb', 'Gb', 'Bbb', 'Db']"
+GVI,"['Ebb', 'Gb', 'Bbb', 'C']",
+FVI,"['Ebb', 'Gb', 'Ab', 'C']",
+ItVI,"['Ebb', 'Gb', 'C']",
+VII,"['Fb', 'Ab', 'Cb']","['Fb', 'Ab', 'Cb', 'Ebb']"
+DVII,,"['F', 'Ab', 'Cb', 'Ebb']"
+a,,
 I,error,error
 I+,error,
 qII,error,
@@ -511,22 +527,6 @@ FVI,error,
 ItVI,error,
 VII,error,error
 DVII,,error
-a,,
-I,"['A', 'C', 'E']","['A', 'C', 'E', 'G']"
-I+,"['A', 'C#', 'E']",
-qII,"['Bb', 'D', 'F']",
-II,"['B', 'D', 'F']","['B', 'D', 'F', 'A']"
-III,"['C', 'E', 'G']","['C', 'E', 'G', 'B']"
-IV,"['D', 'F', 'A']","['D', 'F', 'A', 'C']"
-IV+,"['D', 'F#', 'A']",
-V,"['E', 'G', 'B']","['E', 'G', 'B', 'D']"
-V+,"['E', 'G#', 'B']","['E', 'G#', 'B', 'D']"
-VI,"['F', 'A', 'C']","['F', 'A', 'C', 'E']"
-GVI,"['F', 'A', 'C', 'D#']",
-FVI,"['F', 'A', 'B', 'D#']",
-ItVI,"['F', 'A', 'D#']",
-VII,"['G', 'B', 'D']","['G', 'B', 'D', 'F']"
-DVII,,"['G#', 'B', 'D', 'F']"
 a#,,
 I,"['A#', 'C#', 'E#']","['A#', 'C#', 'E#', 'G#']"
 I+,"['A#', 'C##', 'E#']",
@@ -544,21 +544,21 @@ ItVI,"['F#', 'A#', 'D##']",
 VII,"['G#', 'B#', 'D#']","['G#', 'B#', 'D#', 'F#']"
 DVII,,"['G##', 'B#', 'D#', 'F#']"
 abb,,
-I,error,error
-I+,error,
-qII,error,
-II,error,error
-III,error,error
-IV,error,error
-IV+,error,
-V,error,error
-V+,error,error
-VI,error,error
-GVI,error,
-FVI,error,
-ItVI,error,
-VII,error,error
-DVII,,error
+I,"['Ab', 'Cb', 'Eb']","['Ab', 'Cb', 'Eb', 'Gb']"
+I+,"['Ab', 'C', 'Eb']",
+qII,"['Bbb', 'Db', 'Fb']",
+II,"['Bb', 'Db', 'Fb']","['Bb', 'Db', 'Fb', 'Ab']"
+III,"['Cb', 'Eb', 'Gb']","['Cb', 'Eb', 'Gb', 'Bb']"
+IV,"['Db', 'Fb', 'Ab']","['Db', 'Fb', 'Ab', 'Cb']"
+IV+,"['Db', 'F', 'Ab']",
+V,"['Eb', 'Gb', 'Bb']","['Eb', 'Gb', 'Bb', 'Db']"
+V+,"['Eb', 'G', 'Bb']","['Eb', 'G', 'Bb', 'Db']"
+VI,"['Fb', 'Ab', 'Cb']","['Fb', 'Ab', 'Cb', 'Eb']"
+GVI,"['Fb', 'Ab', 'Cb', 'D']",
+FVI,"['Fb', 'Ab', 'Bb', 'D']",
+ItVI,"['Fb', 'Ab', 'D']",
+VII,"['Gb', 'Bb', 'Db']","['Gb', 'Bb', 'Db', 'Fb']"
+DVII,,"['G', 'Bb', 'Db', 'Fb']"
 b#,,
 I,"['B#', 'D#', 'F##']","['B#', 'D#', 'F##', 'A#']"
 I+,"['B#', 'D##', 'F##']",
@@ -576,18 +576,18 @@ ItVI,"['G#', 'B#', 'E##']",
 VII,"['A#', 'C##', 'E#']","['A#', 'C##', 'E#', 'G#']"
 DVII,,"['A##', 'C##', 'E#', 'G#']"
 bb,,
-I,error,error
-I+,error,
-qII,error,
-II,error,error
-III,error,error
-IV,error,error
-IV+,error,
-V,error,error
-V+,error,error
-VI,error,error
-GVI,error,
-FVI,error,
-ItVI,error,
-VII,error,error
-DVII,,error
+I,"['Bb', 'Db', 'F']","['Bb', 'Db', 'F', 'Ab']"
+I+,"['Bb', 'D', 'F']",
+qII,"['Cb', 'Eb', 'Gb']",
+II,"['C', 'Eb', 'Gb']","['C', 'Eb', 'Gb', 'Bb']"
+III,"['Db', 'F', 'Ab']","['Db', 'F', 'Ab', 'C']"
+IV,"['Eb', 'Gb', 'Bb']","['Eb', 'Gb', 'Bb', 'Db']"
+IV+,"['Eb', 'G', 'Bb']",
+V,"['F', 'Ab', 'C']","['F', 'Ab', 'C', 'Eb']"
+V+,"['F', 'A', 'C']","['F', 'A', 'C', 'Eb']"
+VI,"['Gb', 'Bb', 'Db']","['Gb', 'Bb', 'Db', 'F']"
+GVI,"['Gb', 'Bb', 'Db', 'E']",
+FVI,"['Gb', 'Bb', 'C', 'E']",
+ItVI,"['Gb', 'Bb', 'E']",
+VII,"['Ab', 'C', 'Eb']","['Ab', 'C', 'Eb', 'Gb']"
+DVII,,"['A', 'C', 'Eb', 'Gb']"
