@@ -362,7 +362,7 @@ def NoteInRomanCheck():
         print('\n')
 def ChordToNotesCheck():
     #inputModeList=['C#','D#','E#','F#','G#','A#','B#']
-    inputModeList=['cb']
+    inputModeList=['C','cb']
     #inputDisList=['I','II','III','IV','V','VI','VII']
     inputDisList=['DVII']
     #inputDisList=['I+','bII','IV+','V+','GVI','FVI','ItVI']
@@ -381,9 +381,10 @@ def ChordToNote(mRoot,dis,num):
         mRoot=mRoot.upper()
     elif(mRoot[0]==mRoot[0].upper()):
         modeType=ModeType.Major
-    if mRoot[1]=='B':
-        mRoot=mRoot[0]+'b'
-    print('mode root is',mRoot)
+    if(len(mRoot)>1):
+        if mRoot[1]=='B':
+            mRoot=mRoot[0]+'b'
+        print('mode root is',mRoot)
     for note in Note:
         if note.value==mRoot:
             modeRoot=note
