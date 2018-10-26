@@ -397,7 +397,7 @@ def ChordToNote(mRoot,dis,num):
         dis=dis[:-1]
         #print('in plus')
         
-    elif dis[0]=='q':
+    elif dis[0]=='b':
         inputSType=SChordType.flat
         dis=dis[1:]
     elif dis[0]=='G':

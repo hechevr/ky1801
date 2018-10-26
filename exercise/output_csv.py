@@ -27,9 +27,9 @@ mod_great_list = ["C","C#",'Cb', "D",'D#','Db', "E",'E#','Eb' ,"F",'F#' ,'Fb',"G
 mod_small_list = ["c",'c#','cb', "d",'d#','db' ,"e",'e#','eb' ,"f",'f#','fb', "g",'g#','gb', "a",'a#','ab' "b",'b#','bb']
 # mod_great_list = ["C", "D", "E", "F", "G"]
 # mod_small_list = ["c", "d"]
-small_list = ["I", "I+", "qII", "II", "III", "IV", "IV+", "V", "V+", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
-great_list = ["I", "II", "III", "IV", "V", "qVI", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
-three_chord = ["I", "I+", "qII", "II", "III", "IV", "IV+", "V", "V+", "VI", "qVI", "GVI", "FVI", "ItVI", "VII"]
+small_list = ["I", "I+", "bII", "II", "III", "IV", "IV+", "V", "V+", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
+great_list = ["I", "II", "III", "IV", "V", "bVI", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
+three_chord = ["I", "I+", "bII", "II", "III", "IV", "IV+", "V", "V+", "VI", "bVI", "GVI", "FVI", "ItVI", "VII"]
 seven_chord = ["I", "II", "III", "IV", "V", "V+", "VI", "VII", "DVII"]
 
 def wtf():
