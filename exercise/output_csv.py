@@ -45,7 +45,12 @@ def wtf():
                 if (j in three_chord):
                     try:
                         result = ChordToNote(i, j, "1")
-                        row.append(result)
+                        string = ""
+                        for idx, r in enumerate(result):
+                            string += r
+                            if (idx < len(result) - 1):
+                                string += " "
+                        row.append(string)
                     except:
                         row.append("error")
                 else:
@@ -53,7 +58,12 @@ def wtf():
                 if (j in seven_chord):
                     try:
                         result = ChordToNote(i, j, "2")
-                        row.append(result)
+                        string = ""
+                        for idx, r in enumerate(result):
+                            string += r
+                            if (idx < len(result) - 1):
+                                string += " "
+                        row.append(string)
                     except:
                         row.append("error")
                 else:
@@ -68,7 +78,12 @@ def wtf():
                 if (j in three_chord):
                     try:
                         result = ChordToNote(i, j, "1")
-                        row.append(result)
+                        string = ""
+                        for idx, r in enumerate(result):
+                            string += r
+                            if (idx < len(result) - 1):
+                                string += " "
+                        row.append(string)
                     except:
                         row.append("error")
                 else:
@@ -76,7 +91,12 @@ def wtf():
                 if (j in seven_chord):
                     try:
                         result = ChordToNote(i, j, "2")
-                        row.append(result)
+                        string = ""
+                        for idx, r in enumerate(result):
+                            string += r
+                            if (idx < len(result) - 1):
+                                string += " "
+                        row.append(string)
                     except:
                         row.append("error")
                 else:
