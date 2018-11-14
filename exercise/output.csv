@@ -543,7 +543,7 @@ FVI,F# A# B# D##,
 ItVI,F# A# D##,
 VII,G# B# D#,G# B# D# F#
 DVII,,G## B# D# F#
-abb,,
+ab,,
 I,Ab Cb Eb,Ab Cb Eb Gb
 I+,Ab C Eb,
 bII,Bbb Db Fb,
@@ -559,6 +559,22 @@ FVI,Fb Ab Bb D,
 ItVI,Fb Ab D,
 VII,Gb Bb Db,Gb Bb Db Fb
 DVII,,G Bb Db Fb
+b,,
+I,B D F#,B D F# A
+I+,B D# F#,
+bII,C E G,
+II,C# E G,C# E G B
+III,D F# A,D F# A C#
+IV,E G B,E G B D
+IV+,E G# B,
+V,F# A C#,F# A C# E
+V+,F# A# C#,F# A# C# E
+VI,G B D,G B D F#
+GVI,G B D E#,
+FVI,G B C# E#,
+ItVI,G B E#,
+VII,A C# E,A C# E G
+DVII,,A# C# E G
 b#,,
 I,B# D# F##,B# D# F## A#
 I+,B# D## F##,

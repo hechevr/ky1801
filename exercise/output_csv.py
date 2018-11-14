@@ -24,7 +24,7 @@ def main():
             writer.writerow(row)
 
 mod_great_list = ["C","C#",'Cb', "D",'D#','Db', "E",'E#','Eb' ,"F",'F#' ,'Fb',"G",'G#','Gb', "A",'A#','Ab', "B",'B#','Bb']
-mod_small_list = ["c",'c#','cb', "d",'d#','db' ,"e",'e#','eb' ,"f",'f#','fb', "g",'g#','gb', "a",'a#','ab' "b",'b#','bb']
+mod_small_list = ["c",'c#','cb', "d",'d#','db' ,"e",'e#','eb' ,"f",'f#','fb', "g",'g#','gb', "a",'a#','ab', "b",'b#','bb']
 # mod_great_list = ["C", "D", "E", "F", "G"]
 # mod_small_list = ["c", "d"]
 small_list = ["I", "I+", "bII", "II", "III", "IV", "IV+", "V", "V+", "VI", "GVI", "FVI", "ItVI", "VII", "DVII"]
