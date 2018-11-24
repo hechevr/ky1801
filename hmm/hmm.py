@@ -149,7 +149,7 @@ def hmm_shit():
         else:
             transition_prob = np.vstack((transition_prob, tmp_list))
     transition_prob = np.asmatrix(transition_prob)
-    
+
     for i in range(21):
         for j in range(21):
             transition_prob[i,j] = 1/21

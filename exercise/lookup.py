@@ -15,9 +15,17 @@ def load_table():
     return table
 
 def lookup(s, table):
+    data = []
     for t in table:
         if s in t:
-            print(t)
+            # print(t)
+            data.append(s)
+    return data
+
+def lookupA(s):
+    table = load_table()
+    return lookup(s, table)
+
 if __name__ == "__main__":
     table = load_table()
     lookup(sys.argv[1], table)
