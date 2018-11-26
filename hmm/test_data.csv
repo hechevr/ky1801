@@ -1,0 +1,41 @@
+bar number1,"[1, 0, 1, 0, 1, 0, 0]",CI
+bar number2,"[1, 0, 1, 0, 1, 0, 0]",CI
+bar number3,"[1, 0, 0, 0, 0, 0, 1]",CI
+,,
+bar number9,"[1, 0, 0, 1, 0, 1, 1]",CIV
+bar number10,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number11,"[0, 1, 0, 1, 1, 0, 1]",CV
+bar number12,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number13,"[0, 1, 1, 1, 1, 0, 0]",CV
+bar number14,"[1, 0, 1, 1, 1, 0, 0]",CI
+bar number15,"[0, 1, 0, 1, 1, 0, 1]",CV
+bar number16,"[1, 0, 1, 0, 1, 1, 0]",CI
+,,
+bar number32,"[1, 0, 1, 1, 1, 0, 0]",CIII
+bar number33,"[1, 1, 1, 0, 1, 0, 0]",CI
+,,
+bar number37,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number38,"[1, 1, 1, 1, 0, 0, 0]",CI
+,,
+bar number42,"[1, 0, 1, 0, 0, 1, 1]",CI
+bar number43,"[0, 1, 1, 1, 1, 0, 0]",CV
+bar number44,"[1, 0, 1, 0, 1, 0, 0]",CI
+,,
+bar number46,"[1, 0, 0, 0, 0, 0, 1]",CI
+bar number47,"[0, 1, 0, 0, 0, 0, 0]",CII
+bar number48,"[0, 0, 1, 0, 0, 0, 0]",CIII
+bar number49,"[0, 0, 0, 1, 1, 1, 1]",CIV
+bar number50,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number51,"[0, 1, 1, 0, 1, 0, 1]",CV
+bar number52,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number53,"[0, 1, 1, 0, 1, 0, 1]",CV
+,,
+bar number54,"[1, 0, 1, 0, 1, 0, 1]",CI
+bar number55,"[1, 0, 1, 1, 0, 1, 0]",CVI
+bar number56,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number57,"[0, 0, 1, 1, 1, 1, 0]",CIV
+bar number58,"[1, 0, 1, 0, 1, 0, 1]",CI
+bar number59,"[1, 0, 0, 1, 0, 1, 1]",CIV
+bar number60,"[1, 1, 1, 0, 1, 0, 0]",CI
+bar number61,"[1, 1, 1, 0, 1, 0, 0]",CI
+,,
