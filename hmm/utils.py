@@ -1,28 +1,30 @@
 import numpy as np
 import pickle
+import csv
 
 CHORD = {
     'I': 0,
     'I+': 1,
     'II': 2,
-    'II+': 2,
-    'III': 3,
-    'III+': 4,
-    'IV': 5,
-    'IV+': 6,
-    'V': 7,
-    'V+': 8,
-    'bVI': 9,
+    'II+': 3,
+    'III': 4,
+    'III+': 5,
+    'IV': 6,
+    'IV+': 7,
+    'V': 8,
+    'V+': 9,
     'VI': 10,
     'VI+': 11,
-    'GVI': 12,
-    'FVI': 13,
-    'ItVI': 14,
-    'VII': 15,
-    'VII+': 16,
-    'DVII': 17,
-    'Nah': 18
+    'VII': 12,
+    'VII+': 13,
+    'Nah': 14
 }
+
+def chordidx(s):
+    if '+' in s:
+        return int((CHORD[s]-1)/2)
+    else:
+        return int(CHORD[s]/2)
 
 def load_obj(name):
     with open('Scores/' + name + '.pkl', 'rb') as f:
@@ -50,3 +52,59 @@ def preprocess(data):
             newdata.append([line[0], line[1]])
     print(newdata)
     return newdata
+
+"""
+only load observation sequence
+"""
+def load_train_data(train_file):
+    data = []
+    with open(train_file, "r") as fo:
+        reader = csv.reader(fo)
+        for row in reader:
+            data.append(row[1])
+    return data
+
+"""
+load observation sequence and chord
+"""
+def load_test_data(test_file):
+    data = []
+    with open(test_file, "r") as fo:
+        reader = csv.reader(fo)
+        for row in reader:
+            if (len(row[2]) > 0):
+                data.append([row[1], row[2]])
+    return data
+
+def load_data(test_file):
+    data = []
+    label = []
+    with open(test_file, "r") as fo:
+        reader = csv.reader(fo)
+        d = []
+        l = []
+        for row in reader:
+            print(row)
+            if (row[2] == 'X' or len(row[2]) == 0 or len(row[3]) != 0):
+
+                if (len(d) > 0):
+                    data.append(d)
+                    label.append(l)
+                    d = []
+                    l = []
+
+            else:
+                d.append(row[1])
+                l.append(row[2])
+
+    return data, label
+
+def read_trans_prob(filename):
+    prob = []
+    with open(filename, "r") as fo:
+        reader = csv.reader(fo)
+        for idx, row in enumerate(reader):
+            if (idx > 0):
+                prob.append(row[1:])
+    print(prob)
+    return prob
