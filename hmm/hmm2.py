@@ -22,8 +22,9 @@ class hmm(object):
     def __init__(self, n_obs, table):
         self.table = table
         # states = [chord + 'Nah'] = [22]
-        self.states = [v for v in CHORD.keys()]
+        self.states = [v for v in CHORD.keys() if 'Nah' not in v]
         self.states.sort()
+        self.states.append('Nah')
         self.n_states = len(self.states)
 
         # observations = [range(0, 128)] = [128]
@@ -73,9 +74,11 @@ class hmm(object):
             print('score', score)
             itr += 1
 
+
         self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
         self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
-        self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)
+        self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)        
+
 
         """
         for t in td:
@@ -102,7 +105,7 @@ class hmm(object):
         # print(X, Xpadding)
         # X = np.concatenate(X, Xpadding)
 
-        return self.hmm.decode(X, algorithm="map")
+        return self.hmm.decode(X, algorithm="viterbi")
 
 
     # calculate state from observations
@@ -152,9 +155,13 @@ class hmm(object):
         data = np.array(data)
         print(data)
         print(data.shape)
-        chord_list = data[:, 1]
-        chord_list = [c[1:] for c in chord_list]
-        print(chord_list)
+        # chord_list = data[:, 1]
+        # chord_list = [c[1:] for c in chord_list]
+        chord_list = []
+        for d in data:
+            for c in d:
+                chord_list.append(c)
+
         for chord in chord_list:
             if (chord in CHORD.keys()):
                 self.start_prob[CHORD[chord]] += 1
@@ -197,6 +204,33 @@ class hmm(object):
 
         return self.emission_prob
 
+    def e_trans_prob(self, data):
+        for i in range(self.n_states):
+            for j in range(self.n_states):
+
+                chord_a = self.states[i]
+                chord_b = self.states[j]
+
+                if (chord_a == 'Nah' or chord_b == 'Nah'):
+                    continue
+                print(chord_a, utils.chordidx(chord_a), chord_b,
+                      utils.chordidx(chord_b))
+
+                r = data[utils.chordidx(chord_a)][utils.chordidx(chord_b)]
+
+
+                if ('H' == r):
+                    self.trans_prob[i][j] += 3
+                else:
+                    self.trans_prob[i][j] += 1
+
+        print(self.trans_prob)
+        s = np.sum(self.trans_prob, axis=1)
+        s = np.reshape(s, (-1, 1))
+        print(s)
+        self.trans_prob /= s
+
+
     def __str__(self):
 
         self.start_prob = self.hmm.startprob_
@@ -208,10 +242,16 @@ class hmm(object):
         line += "\nobservations:\n"
         line += str(self.observations)
         line += "\nstart_prob:\n"
+        line += str(np.array(self.start_prob).shape)
+        line += '\n'
         line += str(self.start_prob)
         line += "\ntrans_prob:\n"
+        line += str(np.array(self.trans_prob).shape)
+        line += '\n'
         line += str(self.trans_prob)
         line += "\nemission_prob:\n"
+        line += str(np.array(self.emission_prob).shape)
+        line += '\n'
         line += str(self.emission_prob)
         line += "\n"
         return line
@@ -274,13 +314,14 @@ def praservec(s):
 
 def encode_data(train_data):
     data = []
+    print("wtf")
     for dt in train_data:
-        d = dt[0]
-        print(d)
-        if (len(d) >= 5):
-            vec = praservec(d)
-            if not (vec in data):
-                data.append(vec)
+        for d in dt:
+            print(d)
+            if (len(d) >= 5):
+                vec = praservec(d)
+                if not (vec in data):
+                    data.append(vec)
     return data
 
 def code(data, table):
@@ -289,12 +330,47 @@ def code(data, table):
 def decode(data, table):
     return table[data]
 
+
+def accuracy(model, data, label):
+    a = []
+    count = 0
+    keys = model.states
+    """
+    keys = [v for v in CHORD.keys()]
+    keys.sort()
+    keys.append('Nah')    
+    """
+
+    for idx, d in enumerate(data):
+        print(label[idx])
+        res = model.predict(d)
+        print(res)
+        corr = 0
+        for id, i in enumerate(res[1]):
+            print(keys[i], label[idx][id])
+            if keys[i] == label[idx][id]:
+                corr += 1
+        a.append(corr)
+        count += len(label[idx])
+
+    return np.sum(a) / count
+
 if __name__ == '__main__':
 
-    train_data = utils.load_train_data("train_data.csv")
-    test_data = utils.load_test_data("test_data.csv")
+    # train_data = utils.load_train_data("train_data.csv")
+    # test_data = utils.load_test_data("test_data.csv")
 
-    table = encode_data(test_data)
+    data, label = utils.load_data('Mozart1_standard.csv')
+
+    table = encode_data(data)
+
+    print(np.array(data).shape)
+    print(np.array(table).shape)
+    for t in table:
+        print(t)
+
+    train_data = data[:]
+    train_label = label[:]
 
     model = hmm(len(table), table)
     rules = general_rules()
@@ -302,31 +378,36 @@ if __name__ == '__main__':
     print(rules)
     model.initialize_prob(rules)
     # data = load_train_files()
-    model.update_prob(test_data)
+    model.update_prob(train_label)
+    # trans_p = utils.read_trans_prob("TRAN_PROB.csv")
+    # model.e_trans_prob(trans_p)
 
-    tr_data, tr_label = utils.load_data('test_data.csv')
+    # tr_data, tr_label = utils.load_data('test_data.csv')
+    te_data = []
+    te_label = []
+    for i in range(len(data)):
+        if len(label[i]) == 3:
+            te_data.append(data[i])
+            te_label.append(label[i])
 
-    te_data = tr_data[6]
-    te_label = tr_label[6]
-    tr_data = tr_data[1:]
-    tr_label = tr_label[1:]
+    for i in range(len(te_data)):
+        print(te_data[i], te_label[i])
 
     print(te_data)
-    model.fit(tr_data)
+    model.fit(train_data)
 
     print(model)
 
-    res = model.predict(te_data)
+    # res = model.predict(te_data)
 
-    print('wtf')
-    print(res)
+    # print('wtf')
+    # print(res)
 
-    corr = 0
-    keys = [v for v in CHORD.keys() if v != 'Nah']
-    keys.sort()
-    keys.append('Nah')
-    print(keys)
-    for idx, i in enumerate(res[1]):
-        print(keys[i], te_label[idx])
+    print(te_label)
 
+    acc = accuracy(model, te_data, te_label)
+    print(acc)
 
+    np.savetxt("startprob.csv", model.hmm.startprob_, fmt="%.2f", delimiter=",")
+    np.savetxt("transprob.csv", model.hmm.transmat_, fmt="%.2f", delimiter=",")
+    np.savetxt("emissionprob.csv", model.hmm.emissionprob_, fmt="%.2f", delimiter=",")

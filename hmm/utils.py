@@ -20,6 +20,12 @@ CHORD = {
     'Nah': 14
 }
 
+def chordidx(s):
+    if '+' in s:
+        return int((CHORD[s]-1)/2)
+    else:
+        return int(CHORD[s]/2)
+
 def load_obj(name):
     with open('Scores/' + name + '.pkl', 'rb') as f:
         return pickle.load(f)
@@ -78,14 +84,27 @@ def load_data(test_file):
         d = []
         l = []
         for row in reader:
-            # print(row)
-            if (len(row[2]) > 0):
+            print(row)
+            if (row[2] == 'X' or len(row[2]) == 0 or len(row[3]) != 0):
+
+                if (len(d) > 0):
+                    data.append(d)
+                    label.append(l)
+                    d = []
+                    l = []
+
+            else:
                 d.append(row[1])
                 l.append(row[2])
-            else:
-                data.append(d)
-                label.append(l)
-                d = []
-                l = []
 
     return data, label
+
+def read_trans_prob(filename):
+    prob = []
+    with open(filename, "r") as fo:
+        reader = csv.reader(fo)
+        for idx, row in enumerate(reader):
+            if (idx > 0):
+                prob.append(row[1:])
+    print(prob)
+    return prob
