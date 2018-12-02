@@ -95,7 +95,7 @@ def load_data(test_file):
 
             else:
                 d.append(row[1])
-                l.append(row[2])
+                l.append(row[2].replace("7", "+"))
 
     return data, label
 

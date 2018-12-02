@@ -57,27 +57,27 @@ class hmm(object):
         for t in td:
             print(t)
 
-        self.hmm = hmm_model.MultinomialHMM(n_components=self.n_states, )
+        self.hmm = hmm_model.MultinomialHMM(n_components=self.n_states, init_params="", params='')
 
         print(self.n_states)
 
-        self.hmm.startprob_ = self.start_prob
-        self.hmm.transmat_ = self.trans_prob
-        self.hmm.emissionprob_ = self.emission_prob
+        self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
+        self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
+        self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)
 
         length = [len(l) for l in td]
         itr = 0
         score = -50
-        while (score < -40 and itr < 1):
+        while (score < -40 and itr < 5):
             self.hmm.fit(np.reshape(td_list, (-1, 1)), lengths=length)
             score = self.hmm.score(np.reshape(td_list, (-1, 1)))
             print('score', score)
             itr += 1
 
 
-        self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
-        self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
-        self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)        
+        # self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
+        # self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
+        # self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)
 
 
         """
@@ -105,7 +105,7 @@ class hmm(object):
         # print(X, Xpadding)
         # X = np.concatenate(X, Xpadding)
 
-        return self.hmm.decode(X, algorithm="viterbi")
+        return self.hmm.decode(X, algorithm="map")
 
 
     # calculate state from observations
@@ -140,7 +140,9 @@ class hmm(object):
         print(len(data), self.n_states)
         # emission_prob = emission probability
         self.emission_prob = np.zeros((self.n_states, self.n_obs), dtype=np.float32)
-        self.emission_prob += 1.0 / self.n_obs
+        # self.emission_prob += 1.0 / self.n_obs
+        self.emission_prob += 1.0
+
 
         # the final state wont be checked
         for i in range(self.n_states - 1):
@@ -148,7 +150,8 @@ class hmm(object):
                 # print(i, j)
                 self.emission_prob[i][j] += similarity(data[i], decode(j, self.table))
 
-        self.emission_prob /= np.sum(self.emission_prob, axis=0)
+        self.emission_prob /= np.sum(self.emission_prob)
+        print(self.emission_prob)
 
     # initialize start_prob
     def update_start_prob(self, data):
@@ -220,15 +223,14 @@ class hmm(object):
 
 
                 if ('H' == r):
-                    self.trans_prob[i][j] += 3
+                    self.trans_prob[i][j] += 1
                 else:
                     self.trans_prob[i][j] += 1
 
-        print(self.trans_prob)
         s = np.sum(self.trans_prob, axis=1)
         s = np.reshape(s, (-1, 1))
-        print(s)
         self.trans_prob /= s
+
 
 
     def __str__(self):
@@ -263,8 +265,12 @@ def similarity(chord, obs):
     score = 0
     idx = [i for i, x in enumerate(chord) if x == 1]
     for i in range(len(idx)):
+        score += obs[idx[i]] * sc[i]
+        """
         if obs[idx[i]] == 1:
-            score += sc[i]
+            score += sc[i]        
+        """
+
     return score
 
 
@@ -308,8 +314,16 @@ def praservec(s):
     vec = [0] * 7
     vec_list = s.split(',')
     for i in range(len(vec_list)):
+        t = str(vec_list[i])
+        t = t.replace("[", "")
+        t = t.replace("]", "")
+        t = t.replace(" ", "")
+        vec[i] = int(t)
+        """
         if '1' in vec_list[i]:
-            vec[i] = 1
+           vec[i] = 1       
+        """
+
     return vec
 
 def encode_data(train_data):
@@ -332,7 +346,9 @@ def decode(data, table):
 
 
 def accuracy(model, data, label):
+    log = []
     a = []
+    sa = []
     count = 0
     keys = model.states
     """
@@ -342,25 +358,39 @@ def accuracy(model, data, label):
     """
 
     for idx, d in enumerate(data):
-        print(label[idx])
+        print(idx)
         res = model.predict(d)
-        print(res)
         corr = 0
+        scorr = 0
         for id, i in enumerate(res[1]):
+            l = ""
+            l += d[id]
+            l += "   "
+            l += str(label[idx][id])
+            l += "   "
+            l += keys[i]
+            log.append(l)
+
             print(keys[i], label[idx][id])
             if keys[i] == label[idx][id]:
                 corr += 1
+                scorr += 1
+            elif keys[i] + '+' == label[idx][id]:
+                scorr += 1
+            elif keys[i] == label[idx][id] + '+':
+                scorr += 1
         a.append(corr)
+        sa.append(scorr)
         count += len(label[idx])
 
-    return np.sum(a) / count
+    return (np.sum(a) / count, np.sum(sa)/count), log
 
-if __name__ == '__main__':
+def chordIdentification(filepath):
 
     # train_data = utils.load_train_data("train_data.csv")
     # test_data = utils.load_test_data("test_data.csv")
 
-    data, label = utils.load_data('Mozart1_standard.csv')
+    data, label = utils.load_data(filepath)
 
     table = encode_data(data)
 
@@ -379,16 +409,23 @@ if __name__ == '__main__':
     model.initialize_prob(rules)
     # data = load_train_files()
     model.update_prob(train_label)
-    # trans_p = utils.read_trans_prob("TRAN_PROB.csv")
-    # model.e_trans_prob(trans_p)
+
+    trans_p = utils.read_trans_prob("TRAN_PROB.csv")
+    model.e_trans_prob(trans_p)
 
     # tr_data, tr_label = utils.load_data('test_data.csv')
     te_data = []
     te_label = []
     for i in range(len(data)):
+        """
         if len(label[i]) == 3:
-            te_data.append(data[i])
-            te_label.append(label[i])
+           te_data.append(data[i])
+           te_label.append(label[i])       
+        """
+        te_data.append(data[i])
+        te_label.append(label[i])
+
+
 
     for i in range(len(te_data)):
         print(te_data[i], te_label[i])
@@ -405,9 +442,22 @@ if __name__ == '__main__':
 
     print(te_label)
 
-    acc = accuracy(model, te_data, te_label)
+    te = [0, 1, 2, 7, 8, 9, 14, 15, 16, 18, 19]
+    t_data = [te_data[v] for v in te]
+    t_label = [te_label[v] for v in te]
+    (acc, sacc), log = accuracy(model, t_data, t_label)
     print(acc)
 
-    np.savetxt("startprob.csv", model.hmm.startprob_, fmt="%.2f", delimiter=",")
-    np.savetxt("transprob.csv", model.hmm.transmat_, fmt="%.2f", delimiter=",")
-    np.savetxt("emissionprob.csv", model.hmm.emissionprob_, fmt="%.2f", delimiter=",")
+    accstr = "{:.2f}".format(acc)
+    saccstr = "{:.2f}".format(sacc)
+
+    sres = "Hard: "
+    sres += accstr
+    sres += " Soft: "
+    sres += saccstr
+
+    return sres, log
+
+if __name__ == '__main__':
+
+    chordIdentification('Mozart1_standard_L.csv')
