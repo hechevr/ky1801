@@ -27,3 +27,13 @@
 >> - Expected accuracy: 80%
 >> - Chord matching
 >> - Next sem: data conversion
+### 29/11/2018
+>> - Keys will not affect transition probability given same period
+>> - Use statistics to calculate keys for a measure
+>> - Find some pattern for certain chords and notes in scale to determine the key
+### 9/1/2019
+>> - Find scores with more instruments
+>> - Different pieces in different keys
+>> - Version for piano is better. But it is OK for reduced version and non-reduced version
+>> - Find another package or implement own hmm model
+
