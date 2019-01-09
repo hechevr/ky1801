@@ -73,7 +73,8 @@ class Chord():
     def addNotes(self,note):
         self.notes.append(note)
     def __del__(self):
-        print ('deleted')
+        a=1
+        #print ('deleted')
 
 class Mode():
     MajorScaleTable=[M_I.M2,M_I.M2,M_I.m2,M_I.M2,M_I.M2,M_I.M2,M_I.m2]
@@ -312,7 +313,7 @@ def NotesOfChord(mode,chord,root):
         firstNote=secondNote
         cFirstNote=cSecondNote
     if chord.type==ChordType.Minorf5:
-        print('minorf5')
+       #n print('minorf5')
         chord.notes[2]=NoteShift(True,chord.notes[2])
         output[2]=NoteResult(cNotes[2],chord.notes[2])
 
@@ -345,8 +346,8 @@ def NotesOfChord(mode,chord,root):
             chord.notes=result[0]
             output=result[1]
     outputString=GetOutput(output)
-    print('chord notes are ',chord.notes)
-    print('output is ',output)
+    #print('chord notes are ',chord.notes)
+    #print('output is ',output)
     
     return output
 
@@ -496,12 +497,12 @@ def main():
     
     
     while input()!='quit':
-     
-        mode=input('Choose your identification mode\n 1.Note to chord\n 2.Chord to note\n')
+    
+        mode=input('Choose your identification mode\n 1.Chord to note\n')
         print('mode')  
         while mode!='1' and mode!='2':
             mode=input('Wrong input. Please input the correct answer\n')
-    
+        '''
         if mode=='1':
             inputValue=input('in note to chord mode\n input your notes\n')
             outputChord=Chord()
@@ -561,8 +562,8 @@ def main():
                     chordTypeCheck=False
             if chordTypeCheck==True:
                 outputChord.type=ChordType.Dim
-        elif mode=='2':
-            '''
+       '''
+        if mode=='1':
             inputMode=input('in chord to note mode\n input your chord Mode\n')
             
            
@@ -574,8 +575,8 @@ def main():
             #show the note of the chord
             #inputMode=new Mode(inputRoot,)
             
-            '''
-            ChordToNotesCheck()
+            
+            #ChordToNotesCheck()
            # NoteInRomanCheck()
 if __name__ == "__main__":
     main()
