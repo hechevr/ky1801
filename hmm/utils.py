@@ -79,10 +79,12 @@ def load_test_data(test_file):
 def load_data(test_file):
     data = []
     label = []
-    with open(test_file, "r") as fo:
+    pos = []
+    with open(test_file, "r", encoding="utf-8-sig") as fo:
         reader = csv.reader(fo)
         d = []
         l = []
+        p = []
         for row in reader:
             print(row)
             if (row[2] == 'X' or len(row[2]) == 0 or len(row[3]) != 0):
@@ -90,14 +92,17 @@ def load_data(test_file):
                 if (len(d) > 0):
                     data.append(d)
                     label.append(l)
+                    pos.append(p)
                     d = []
                     l = []
+                    p = []
 
             else:
                 d.append(row[1])
                 l.append(row[2].replace("7", "+"))
+                p.append(row[0])
 
-    return data, label
+    return pos, data, label
 
 def read_trans_prob(filename):
     prob = []

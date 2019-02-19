@@ -18,6 +18,8 @@ parameter:
         emission_prob = [22, 2 ^ 7]
 """
 
+dimension = 8
+
 class hmm(object):
     def __init__(self, n_obs, table):
         self.table = table
@@ -55,9 +57,9 @@ class hmm(object):
                 td_list.append(code(praservec(s), self.table))
             td.append(tdt)
         for t in td:
-            print(t)
+            print("wtf", t)
 
-        self.hmm = hmm_model.MultinomialHMM(n_components=self.n_states, init_params="", params='')
+        self.hmm = hmm_model.MultinomialHMM(n_components=self.n_states, init_params="", params="s")
 
         print(self.n_states)
 
@@ -68,11 +70,18 @@ class hmm(object):
         length = [len(l) for l in td]
         itr = 0
         score = -50
+        """
         while (score < -40 and itr < 5):
+           self.hmm.fit(np.reshape(td_list, (-1, 1)), lengths=length)
+           score = self.hmm.score(np.reshape(td_list, (-1, 1)))
+           print('score', score)
+           itr += 1       
+        """
+
+        for i in range(0):
+            print("score", self.hmm.score(np.reshape(td_list, (-1, 1)), lengths=length))
             self.hmm.fit(np.reshape(td_list, (-1, 1)), lengths=length)
-            score = self.hmm.score(np.reshape(td_list, (-1, 1)))
-            print('score', score)
-            itr += 1
+            print("score", self.hmm.score(np.reshape(td_list, (-1, 1)), lengths=length))
 
 
         # self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
@@ -279,7 +288,7 @@ def similarity(chord, obs):
 def parser(s):
     if (len(s) < 1):
         return []
-    vec = [0] * 7
+    vec = [0] * dimension
     vec_str = s.split()
     print(vec_str)
     if ('C' in vec_str):
@@ -311,7 +320,7 @@ def general_rules():
 
 
 def praservec(s):
-    vec = [0] * 7
+    vec = [0] * dimension
     vec_list = s.split(',')
     for i in range(len(vec_list)):
         t = str(vec_list[i])
@@ -390,7 +399,10 @@ def chordIdentification(filepath):
     # train_data = utils.load_train_data("train_data.csv")
     # test_data = utils.load_test_data("test_data.csv")
 
-    data, label = utils.load_data(filepath)
+    pos, data, label = utils.load_data(filepath)
+
+    for d in data:
+        print(data,"wtfffdfd")
 
     table = encode_data(data)
 
@@ -405,6 +417,7 @@ def chordIdentification(filepath):
     model = hmm(len(table), table)
     rules = general_rules()
 
+    print('rules')
     print(rules)
     model.initialize_prob(rules)
     # data = load_train_files()
@@ -425,12 +438,14 @@ def chordIdentification(filepath):
         te_data.append(data[i])
         te_label.append(label[i])
 
+        print(data[i],"wtf")
+
 
 
     for i in range(len(te_data)):
         print(te_data[i], te_label[i])
 
-    print(te_data)
+    print("te_data:", te_data)
     model.fit(train_data)
 
     print(model)
@@ -443,6 +458,7 @@ def chordIdentification(filepath):
     print(te_label)
 
     te = [0, 1, 2, 7, 8, 9, 14, 15, 16, 18, 19]
+    # te = [x for x in range(len(te_data))]
     t_data = [te_data[v] for v in te]
     t_label = [te_label[v] for v in te]
     (acc, sacc), log = accuracy(model, t_data, t_label)
@@ -456,8 +472,20 @@ def chordIdentification(filepath):
     sres += " Soft: "
     sres += saccstr
 
-    return sres, log
+    pos_t = [pos[t] for t in te]
+    pos_x = []
+    for p in pos_t:
+        for x in p:
+            pos_x.append(x)
+    full_log = []
+    for t, l in enumerate(log):
+        # print(l)
+        # print(pos_x[t])
+        s = pos_x[t] + "  " + l
+        full_log.append(s)
+
+    return sres, full_log
 
 if __name__ == '__main__':
 
-    chordIdentification('Mozart1_standard_L.csv')
+    chordIdentification('Mozart1_standard_8.csv')
