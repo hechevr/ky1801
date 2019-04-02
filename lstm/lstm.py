@@ -23,7 +23,7 @@ def parser(data, label):
             s = s.replace("[", "")
             s = s.replace("]", "")
             s = s.replace(" ", "")
-            print(s)
+            # print(s)
             v[i] = float(s)
         train_x.append(v)
         """
@@ -90,8 +90,8 @@ def parser(data, label):
 
 
 # generate train x and layer
-def generat_train_dataset(datapath):
-    pos, data, label = utils.load_data(datapath)
+def generate_train_dataset(datapath):
+    pos, data, label = utils.load_data_new(datapath)
 
     train_x, train_y = parser(data, label)
 
@@ -105,8 +105,11 @@ def lstm_train(data, size=5):
     return train_x
 
 # train_x, train_y = generat_train_dataset('Mozart1_standard_8.csv')
-train_x1, train_y1 = generat_train_dataset('Von_fremden_Lndern_und_Menschen.csv')
-train_x2, train_y2 = generat_train_dataset('the happy farmer.csv')
+# train_x1, train_y1 = generat_train_dataset('Von_fremden_Lndern_und_Menschen.csv')
+# train_x2, train_y2 = generat_train_dataset('the happy farmer.csv')
+
+train_x1, train_y1 = generate_train_dataset("data/Vondata.csv")
+train_x2, train_y2 = generate_train_dataset("data/thehfdata.csv")
 
 train_x = train_x1 + train_x2
 train_y = train_y1 + train_y2
@@ -119,7 +122,7 @@ model.compile(loss="mean_squared_error", optimizer='adam')
 X = lstm_train(train_x, timestep)
 Y = train_y
 
-train_n = 5
+train_n = 10
 trX = np.reshape(X[:-train_n*timestep], (int(len(X[:-train_n*timestep])/timestep), timestep, dimension))
 trY = np.reshape(Y[timestep-1:-train_n], (len(Y[timestep-1:-train_n]), len(label_template)))
 print(len(X))
@@ -127,7 +130,7 @@ print(len(train_y))
 print(trX.shape)
 print(trY.shape)
 
-model.fit(trX, trY, epochs=30, batch_size=1, verbose=2)
+model.fit(trX, trY, epochs=50, batch_size=1, verbose=2)
 
 """
 for epoch in range(2):
@@ -146,7 +149,7 @@ print(train_predict)
 print(teY)
 """
 
-test_n = 5
+test_n = 10
 teX = X[-timestep*test_n:]
 teY = Y[-test_n:]
 teX = np.reshape(teX, (-timestep*test_n, timestep, dimension))
@@ -159,9 +162,28 @@ print(teY)
 
 lr = np.argmax(train_predict, 1)
 ll = np.argmax(teY, 1)
+lr_likelihood = []
+for idx, l in enumerate(lr):
+    print(lr[idx])
+    lr_likelihood.append(train_predict[idx][l])
+
+print(lr_likelihood)
 
 print(lr)
 print(ll)
 
 res = np.mean(np.equal(lr, ll))
 print('acc: ', res)
+
+# output
+chord_list = utils.CHORD_INV
+out_label = [chord_list[v] for v in ll]
+out_predict = [chord_list[v] for v in lr]
+out_input = train_x[-test_n:]
+fo = open("output.csv", "w")
+fo.write("input;label;predict;likelihood\n")
+for idx in range(len(out_input)):
+    line = str(out_input[idx]) + ";" + str(out_label[idx]) + ";" + str(out_predict[idx]) + ";" + str(lr_likelihood[idx]) + "\n" 
+    fo.write(line)
+fo.close()
+
