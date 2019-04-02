@@ -24,7 +24,7 @@ def startFunction():
     print(res)
     scrollbar = tk.Scrollbar(window)
     scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-    listbox = tk.Listbox(window, yscrollcommand=scrollbar.set, width=30, height=30)
+    listbox = tk.Listbox(window, yscrollcommand=scrollbar.set, width=35, height=30)
 
     for i in range(len(log)):
         listbox.insert(tk.END, log[i])
