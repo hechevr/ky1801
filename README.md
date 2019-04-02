@@ -37,3 +37,8 @@
 >> - Version for piano is better. But it is OK for reduced version and non-reduced version
 >> - Find another package or implement own hmm model
 
+### 20/2/2019
+>> - Do not count all the notes. For some rare chords, just ignore it.
+>> - Modulization the program. For working module, do not worry about the time unit.
+>> - Determine the time unit: From whole measure to small time unit or from small time unit to whole measure.
+

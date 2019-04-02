@@ -27,6 +27,20 @@ SEVENTHS = [
 	("dim7", ["dim", "dim"]),
 	("min7b5", ["dim", "min"]),
 ]
-KEY_SCALES={'C':[note.Note('C'),note.Note('D'),note.Note('E'),note.Note('F'),note.Note('G'),note.Note('A'),note.Note('B')]
+KEY_SCALES={'C':[note.Note('C'),note.Note('D'),note.Note('E'),note.Note('F'),note.Note('G'),note.Note('A'),note.Note('B')],
+            'c':[note.Note('C'),note.Note('D'),note.Note('E-'),note.Note('F'),note.Note('G'),note.Note('A-'),note.Note('B-')],
+            'G':[note.Note('G'),note.Note('A'),note.Note('B'),note.Note('C'),note.Note('D'),note.Note('E'),note.Note('F#')],
+            'F':[note.Note('F'),note.Note('G'),note.Note('A'),note.Note('B-'),note.Note('C'),note.Note('D'),note.Note('E')]
+
+        }
+OUT_KEY_SCALES={
+        'C major':[note.Note('D-'),note.Note('D'),note.Note('E-'),note.Note('F'),note.Note('F#'),note.Note('A-'),note.Note('B')],
+        'G major':[note.Note('A-'),note.Note('D'),note.Note('B-'),note.Note('C'),note.Note('C#'),note.Note('E-'),note.Note('F#')],
+        'F major':[note.Note('G-'),note.Note('C'),note.Note('A-'),note.Note('B-'),note.Note('B'),note.Note('D-'),note.Note('E')]
+}
+CHORD_TYPE_NOTES={
+        'C major':[note.Note('A-')],'C minor':[note.Note('E'),note.Note('A'),note.Note('B')],
+        'G major':[note.Note('E-')], 'C minor':[],
+        'F major':[note.Note('D-')], 'F minor':[]
         
         }
