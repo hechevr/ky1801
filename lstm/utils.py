@@ -19,6 +19,23 @@ CHORD = {
     'VII+': 13,
     'Nah': 14
 }
+CHORD_INV = {
+    0: 'I',
+    1: 'I+',
+    2: 'II',
+    3: 'II+',
+    4: 'III',
+    5: 'III+',
+    6: 'IV',
+    7: 'IV+',
+    8: 'V',
+    9: 'V+',
+    10: 'VI',
+    11: 'VI+',
+    12: 'VII',
+    13: 'VII+',
+    14: 'Nah'
+}
 
 def chordidx(s):
     if '+' in s:
@@ -113,6 +130,42 @@ def load_data(test_file):
                 p.append(row[0])
             """
 
+
+    return pos, data, label
+
+def load_data_new(test_file):
+    data = []
+    label = []
+    pos = []
+    with open(test_file, "r", encoding="utf-8-sig") as fo:
+        reader = csv.reader(fo, delimiter=";")
+        for row in reader:
+            if (row[0] == ""):
+                continue
+            if (row[0][0] == "."):
+                continue
+            # parser vector
+            vec_str = row[1]
+            vec_str = vec_str.replace(" ", "")
+            vec_str = vec_str.replace("[[", ",")
+            vec_str = vec_str.replace("[", "")
+            vec_str = vec_str.replace("]]", "")
+            vec = vec_str.split("]")
+
+            for idx, v in enumerate(vec):
+                numvec = v
+                data.append(numvec[1:])
+                pos.append(row[0])
+                if (idx + 2 < len(row)):
+                    label.append(row[idx + 2])
+                else:
+                    label.append("Nah")
+
+    print(len(pos))
+    print(len(data))
+    print(len(label))
+    for idx, d in enumerate(pos):
+        print(pos[idx], data[idx], label[idx])
 
     return pos, data, label
 
