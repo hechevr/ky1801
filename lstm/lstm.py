@@ -116,13 +116,13 @@ train_y = train_y1 + train_y2
 
 model = Sequential()
 model.add(LSTM(32, input_shape=(timestep, dimension)))
-model.add(Dense(len(label_template)))
+model.add(Dense(len(label_template), activation='softmax'))
 model.compile(loss="mean_squared_error", optimizer='adam')
 
 X = lstm_train(train_x, timestep)
 Y = train_y
 
-train_n = 10
+train_n = 20
 trX = np.reshape(X[:-train_n*timestep], (int(len(X[:-train_n*timestep])/timestep), timestep, dimension))
 trY = np.reshape(Y[timestep-1:-train_n], (len(Y[timestep-1:-train_n]), len(label_template)))
 print(len(X))
@@ -149,7 +149,7 @@ print(train_predict)
 print(teY)
 """
 
-test_n = 10
+test_n = 20
 teX = X[-timestep*test_n:]
 teY = Y[-test_n:]
 teX = np.reshape(teX, (-timestep*test_n, timestep, dimension))
