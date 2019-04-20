@@ -1,10 +1,13 @@
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
+import keras
 
 import numpy as np
 
 import utils
+
+import matplotlib.pyplot as plt
 
 label_template = [v for v in utils.CHORD.keys()]
 
@@ -25,6 +28,8 @@ def parser(data, label):
             s = s.replace(" ", "")
             # print(s)
             v[i] = float(s)
+            if v[i] > 0:
+                v[i] = v[i]
         train_x.append(v)
         """
         for i in range(len(vector_list)):
@@ -108,21 +113,38 @@ def lstm_train(data, size=5):
 # train_x1, train_y1 = generat_train_dataset('Von_fremden_Lndern_und_Menschen.csv')
 # train_x2, train_y2 = generat_train_dataset('the happy farmer.csv')
 
-train_x1, train_y1 = generate_train_dataset("data/Vondata.csv")
-train_x2, train_y2 = generate_train_dataset("data/thehfdata.csv")
+pretrain_x, pretrain_y = generate_train_dataset('pretrain_data.csv')
 
-train_x = train_x1 + train_x2
-train_y = train_y1 + train_y2
 
 model = Sequential()
 model.add(LSTM(32, input_shape=(timestep, dimension)))
 model.add(Dense(len(label_template), activation='softmax'))
 model.compile(loss="mean_squared_error", optimizer='adam')
 
+X = lstm_train(pretrain_x, timestep)
+Y = pretrain_y
+X = np.reshape(X, (int(len(X)/timestep), timestep, dimension))
+Y = np.reshape(Y[1:], (len(Y[1:]), len(label_template)))
+pretrain_loss = []
+history = model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
+pretrain_loss = history.history["loss"]
+# print(pretrain_loss)
+pretrain_y = [i for i in range(1, 21)]
+# plt.plot(pretrain_y, pretrain_loss, label="pretrain")
+# plt.savefig('pretrain_loss.png')
+
+train_x1, train_y1 = generate_train_dataset("data/Vondata.csv")
+train_x2, train_y2 = generate_train_dataset("data/thehfdata.csv")
+train_x3, train_y3 = generate_train_dataset("data/Mozart3data.csv")
+train_x4, train_y4 = generate_train_dataset("data/Mozart5dataG.csv")
+
+train_x = train_x2 + train_x1 + train_x3 +train_x4
+train_y = train_y2 + train_y1 + train_y3 + train_y4
+
 X = lstm_train(train_x, timestep)
 Y = train_y
 
-train_n = 20
+train_n = 11
 trX = np.reshape(X[:-train_n*timestep], (int(len(X[:-train_n*timestep])/timestep), timestep, dimension))
 trY = np.reshape(Y[timestep-1:-train_n], (len(Y[timestep-1:-train_n]), len(label_template)))
 print(len(X))
@@ -130,7 +152,37 @@ print(len(train_y))
 print(trX.shape)
 print(trY.shape)
 
-model.fit(trX, trY, epochs=50, batch_size=1, verbose=2)
+it = 30
+history = model.fit(trX, trY, epochs=it, batch_size=1, verbose=2)
+pretrain_loss += history.history["loss"]
+print(pretrain_loss)
+pretrain_y = [i for i in range(1, 1 + len(pretrain_loss))]
+plt.plot(pretrain_y, pretrain_loss, label="train with pretrain")
+plt.legend(loc='upper left')
+plt.xlabel('Iterations')
+plt.ylabel('L2 Loss')
+plt.savefig('train_loss.png')
+
+
+"""
+model2 = Sequential()
+model2.add(LSTM(32, input_shape=(timestep, dimension)))
+model2.add(Dense(len(label_template), activation='softmax'))
+model2.compile(loss="mean_squared_error", optimizer='adam')
+history = model2.fit(trX, trY, epochs=50, batch_size=1, verbose=2)
+pretrain_loss = history.history["loss"]
+print(pretrain_loss)
+pretrain_y = [i for i in range(1, 51)]
+print(len(pretrain_loss), len(pretrain_y))
+plt.plot(pretrain_y, pretrain_loss, label="train without pretrain")
+plt.legend(loc='upper left')
+plt.xlabel('Iterations')
+plt.ylabel('L2 Loss')
+plt.savefig('train_loss_nopretrain.png')
+"""
+
+
+
 
 """
 for epoch in range(2):
@@ -149,7 +201,7 @@ print(train_predict)
 print(teY)
 """
 
-test_n = 20
+test_n = train_n
 teX = X[-timestep*test_n:]
 teY = Y[-test_n:]
 teX = np.reshape(teX, (-timestep*test_n, timestep, dimension))

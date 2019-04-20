@@ -152,6 +152,7 @@ def load_data_new(test_file):
             vec_str = vec_str.replace("]]", "")
             vec = vec_str.split("]")
 
+            print(vec)
             for idx, v in enumerate(vec):
                 numvec = v
                 data.append(numvec[1:])
@@ -164,8 +165,11 @@ def load_data_new(test_file):
     print(len(pos))
     print(len(data))
     print(len(label))
+    """
     for idx, d in enumerate(pos):
-        print(pos[idx], data[idx], label[idx])
+        print(pos[idx], data[idx], label[idx])    
+    """
+
 
     return pos, data, label
 
