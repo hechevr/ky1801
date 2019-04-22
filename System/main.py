@@ -27,7 +27,7 @@ def main(filepath, pp):
     predict = []
     score_list = []
     label_list = []
-    max_iteration = 10
+    max_iteration = 8
     limited = 0.5
     changekey = -1
     for i in range(max_iteration):
@@ -39,7 +39,7 @@ def main(filepath, pp):
         score = np.mean(likelihood)
         print('score', score)
         # output the label
-        threshold = 0.8
+        threshold = 0.80
         if (score > threshold):
             # if score is small, return the predict
             predict = label
@@ -77,6 +77,27 @@ def main(filepath, pp):
         label = [lstm.vec2chord(v) for v in label_list[idx]]
         label_idx = label_list[idx]
 
+    # write output to csv file
+    label = [lstm.vec2chord(v) for v in label_list[idx]]
+    """
+    fo = open("output.csv", "w")
+    for i in range(len(label)):
+        fo.write(pos[i])
+        fo.write(",")
+        fo.write(label[i])
+        fo.write("\n")    
+    """
+
+
+    # write output
+    info = open("../tmp.bin", "rb")
+    outfo = open("./output/output.xml", "wb")
+    bytes = info.read()
+    outfo.write(bytes)
+    info.close()
+    outfo.close()
+
+    """
     for idx in range(len(score_list)):
         label = [lstm.vec2chord(v) for v in label_list[idx]]
         p, d, l = generate_train_dataset(sys.argv[2], return_pos=True)
@@ -97,7 +118,11 @@ def main(filepath, pp):
                         correct += 1
                         break
         accuracy = correct / len(ll_label)
-        print(accuracy)
+        print(accuracy)       
+    """
+
+
+
 
 
 if __name__ == '__main__':
