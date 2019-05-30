@@ -6,6 +6,7 @@ from model import Model
 from model import generate_train_dataset
 
 from preprocessing.preprocessing import PreProcessing
+from config import config
 
 def keychange(barnum):
     print("Key change at bar %d" % barnum)
@@ -14,14 +15,14 @@ def keychange(barnum):
 # main function for system
 def main(filepath, pp):
     # load every score in following folder for training
-    train_data_dir = './data'
+    train_data_dir = config.data_dir
     train_list = [os.path.join(train_data_dir, f) for f in os.listdir(train_data_dir)]
     # initialize lstm model
     lstm = Model()
     # pretrain using fake data
-    lstm.pretrain()
+    lstm.pretrain(iteration=config.pretrain_step)
     # train the model with real data
-    lstm.train(train_list, 70)
+    lstm.train(train_list, config.training_step)
 
     # evaluating system
     predict = []
@@ -48,7 +49,7 @@ def main(filepath, pp):
             # if score is large, key change
             score_list.append(score)
             label_list.append(label)
-            # find the wrong possible wrong bar
+            # find the possible possition that result in bad likelihood
             for j in range(len(label)):
                 if (likelihood[j] < limited):
                     barnum = int(pos[j+1])
@@ -73,29 +74,19 @@ def main(filepath, pp):
         idx = len(score_list) - 1
         print(score_list)
         print(idx)
-        print("predict: ")
         label = [lstm.vec2chord(v) for v in label_list[idx]]
         label_idx = label_list[idx]
 
     # write output to csv file
     label = [lstm.vec2chord(v) for v in label_list[idx]]
-    """
-    fo = open("output.csv", "w")
+    fo = open(config.output_file, "w")
     for i in range(len(label)):
         fo.write(pos[i])
         fo.write(",")
         fo.write(label[i])
         fo.write("\n")    
-    """
 
 
-    # write output
-    info = open("../tmp.bin", "rb")
-    outfo = open("./output/output.xml", "wb")
-    bytes = info.read()
-    outfo.write(bytes)
-    info.close()
-    outfo.close()
 
     """
     for idx in range(len(score_list)):

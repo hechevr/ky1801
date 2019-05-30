@@ -19,6 +19,20 @@
 * music21
 * numpy
 
+### Testing Command
+
+To generate pretrain dataset (the definition can be found in report)
+
+```
+python generate_pretrain_dataset.py
+```
+
+To run system on xxx.mxl file
+
+```
+python main.py xxx.mxl
+```
+
 ### Future Work
 
 * Machine learning approach for parameters in system
