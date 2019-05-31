@@ -5,6 +5,10 @@ import hmm2
 
 global root, filepathEntry
 
+"""
+UI code for chord identification
+"""
+
 def selectInputFile(event):
     global root, filepathEntry
     # filename = filedialog.askopenfilename()

@@ -20,6 +20,7 @@ parameter:
 
 dimension = 8
 
+# hidden markov model class
 class hmm(object):
     def __init__(self, n_obs, table):
         self.table = table
@@ -56,13 +57,9 @@ class hmm(object):
                 tdt.append(code(praservec(s), self.table))
                 td_list.append(code(praservec(s), self.table))
             td.append(tdt)
-        for t in td:
-            print("wtf", t)
-
+        # create hmm model
         self.hmm = hmm_model.MultinomialHMM(n_components=self.n_states, init_params="", params="s")
-
-        print(self.n_states)
-
+        # set model parameters
         self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
         self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
         self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)
@@ -70,35 +67,16 @@ class hmm(object):
         length = [len(l) for l in td]
         itr = 0
         score = -50
-        """
-        while (score < -40 and itr < 5):
-           self.hmm.fit(np.reshape(td_list, (-1, 1)), lengths=length)
-           score = self.hmm.score(np.reshape(td_list, (-1, 1)))
-           print('score', score)
-           itr += 1       
-        """
-
+        # train model using EM algorithm
         for i in range(0):
             print("score", self.hmm.score(np.reshape(td_list, (-1, 1)), lengths=length))
             self.hmm.fit(np.reshape(td_list, (-1, 1)), lengths=length)
             print("score", self.hmm.score(np.reshape(td_list, (-1, 1)), lengths=length))
 
-
+        # uncomment this part if not use fit function
         # self.hmm.startprob_ = np.array(self.start_prob, dtype=np.float64)
         # self.hmm.transmat_ = np.array(self.trans_prob, dtype=np.float64)
         # self.hmm.emissionprob_ = np.array(self.emission_prob, dtype=np.float64)
-
-
-        """
-        for t in td:
-            X = np.reshape(t, (-1, 1))
-            Xpadding = np.reshape([v for v in range(self.n_obs)], (-1, 1))
-            X = np.concatenate([X, Xpadding])
-
-            self.hmm.fit(X)
-            print(self.hmm.score(X))       
-        """
-
 
     def predict(self, observations, option='viterbi'):
         print(len(observations))
@@ -107,8 +85,6 @@ class hmm(object):
         for d in observations:
             s = code(praservec(d), self.table)
             td.append(s)
-        # print(td)
-        # Xpadding = np.reshape([v for v in range(self.n_obs)], (-1, 1))
         X = np.reshape(td, (-1, 1))
 
         # print(X, Xpadding)
@@ -240,8 +216,6 @@ class hmm(object):
         s = np.reshape(s, (-1, 1))
         self.trans_prob /= s
 
-
-
     def __str__(self):
 
         self.start_prob = self.hmm.startprob_
@@ -267,7 +241,7 @@ class hmm(object):
         line += "\n"
         return line
 
-
+# degree of similarity(please check report if need)
 def similarity(chord, obs):
     # print(chord, obs)
     sc = [5, 3, 2, 1]
@@ -307,6 +281,7 @@ def parser(s):
         vec[6] = 1
     return vec
 
+# generate rules for parameters initialization
 def general_rules():
     keys = [v for v in CHORD.keys() if v != 'Nah']
     keys.sort()
@@ -318,7 +293,7 @@ def general_rules():
         print(lookupstr, rule, parser(rule))
     return rules
 
-
+# convert string to vector
 def praservec(s):
     vec = [0] * dimension
     vec_list = s.split(',')
@@ -335,9 +310,9 @@ def praservec(s):
 
     return vec
 
+# encode data to fit MultinomialHMM
 def encode_data(train_data):
     data = []
-    print("wtf")
     for dt in train_data:
         for d in dt:
             print(d)
@@ -353,18 +328,13 @@ def code(data, table):
 def decode(data, table):
     return table[data]
 
-
+# calculate accuracy
 def accuracy(model, data, label):
     log = []
     a = []
     sa = []
     count = 0
     keys = model.states
-    """
-    keys = [v for v in CHORD.keys()]
-    keys.sort()
-    keys.append('Nah')    
-    """
 
     for idx, d in enumerate(data):
         print(idx)
@@ -396,23 +366,12 @@ def accuracy(model, data, label):
 
 def chordIdentification(filepath):
 
-    # train_data = utils.load_train_data("train_data.csv")
-    # test_data = utils.load_test_data("test_data.csv")
-
     pos, data, label = utils.load_data(filepath)
 
-    for d in data:
-        print(data,"wtfffdfd")
-
     table = encode_data(data)
-
-    print(np.array(data).shape)
-    print(np.array(table).shape)
-    for t in table:
-        print(t)
-
-    train_data = data[:]
-    train_label = label[:]
+    # train model
+    train_data = data[:-10]
+    train_label = label[:-10]
 
     model = hmm(len(table), table)
     rules = general_rules()
@@ -430,35 +389,16 @@ def chordIdentification(filepath):
     te_data = []
     te_label = []
     for i in range(len(data)):
-        """
-        if len(label[i]) == 3:
-           te_data.append(data[i])
-           te_label.append(label[i])       
-        """
         te_data.append(data[i])
         te_label.append(label[i])
-
-        print(data[i],"wtf")
-
-
-
-    for i in range(len(te_data)):
-        print(te_data[i], te_label[i])
 
     print("te_data:", te_data)
     model.fit(train_data)
 
-    print(model)
-
-    # res = model.predict(te_data)
-
-    # print('wtf')
-    # print(res)
-
     print(te_label)
 
-    te = [0, 1, 2, 7, 8, 9, 14, 15, 16, 18, 19]
-    # te = [x for x in range(len(te_data))]
+    # test last 10 chords
+    te = [x for x in range(len(te_data)-10, len(te_data))]
     t_data = [te_data[v] for v in te]
     t_label = [te_label[v] for v in te]
     (acc, sacc), log = accuracy(model, t_data, t_label)
@@ -488,4 +428,4 @@ def chordIdentification(filepath):
 
 if __name__ == '__main__':
 
-    chordIdentification('Mozart1_standard_8.csv')
+    chordIdentification(sys.argv[1])
