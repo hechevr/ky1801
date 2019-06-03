@@ -8,7 +8,7 @@ major = ['C', 'C#', 'Cb', 'D', 'D#', 'Db', 'E', 'E#', 'Eb', 'F', 'F#', 'Fb', 'G'
 
 
 
-
+# divide the measure into chords
 class ChordDivide:
     table=[]
     def __init__(self,c,nl):
@@ -25,9 +25,9 @@ class ChordDivide:
         if not self.__class__.table:
             self.__class__.table=self.load_table()
 
-        #self.NoteListCheck()
     @staticmethod
     def load_table():
+        #load the chord table
         table = []
         with open("preprocessing/output.csv") as csvfile:
             reader = csv.reader(csvfile)
@@ -40,8 +40,6 @@ class ChordDivide:
         return table
     @classmethod
     def ChordCheck(cls,n):
-        ##print("n is",n)
-        ##print("cls.table is",cls.table)
         for x,y,z in itertools.product(n,repeat=3):
             xn=x.name
             xn=xn.replace('-','b')
@@ -50,20 +48,15 @@ class ChordDivide:
             zn=z.name
             zn=zn.replace('-','b')
             notes=xn+' '+yn+' '+zn
-            ##print('notes is',notes)
             for t in cls.table:
                 if notes in t:
                     return True
         return False
     def NoteListCheck(self):
-        ##print("in note list check")
         for n in self.noteList:
             n.show('text')
-            #print('offset',n.offset)
             
             np=n.quarterLength+n.offset
-            #print('np is',np)
-            #print('self.length',self.length)
 
     def DivideToSub(self):
         for n in self.noteList:
@@ -75,13 +68,9 @@ class ChordDivide:
                         temNote.quarterLength=self.length*(i+1)-n.offset
                         if temNote.quarterLength>0:
                             self.subList[i].append(temNote)
-                            ##print("temNote1 quarterlength",temNote.quarterLength)
 
-                            ##print('1')
                     else:
-                        ##print("n quarterlength",n.quarterLength)
                         self.subList[i].append(n)
-                        ##print('2')
 
                 elif np<self.length*(i+1) and np>=self.length*(i):
                     if n.offset<self.length*(i):
@@ -89,16 +78,7 @@ class ChordDivide:
                         temNote.quarterLength=np-self.length*(i)
                         if temNote.quarterLength>0:
                             self.subList[i].append(temNote)
-                            ##print("temNote3 quarterlength",temNote.quarterLength)
 
-                            ##print('3')
                     else:
-                        ##print('4')
-                        ##print('n quarterlength',n.quarterLength)
                         self.subList[i].append(n)
-                ##print('sub list ',i,' is ',self.subList[i])
-                '''
-        for sl in self.subList:
-            #print("sub list ",sl)
-                '''
-        
+            

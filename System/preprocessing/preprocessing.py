@@ -15,7 +15,6 @@ class PreProcessing:
         for i in range(1,self.maxM):
             self.keyList.append(key)
             self.dataList.append(self.DataExtract(i))
-            #print(i)
     def KeyCheck(self,bar):
         if  bar<self.maxM-1:
             s1=stream.Stream()
@@ -26,7 +25,6 @@ class PreProcessing:
             for i in range(bar-1,self.maxM-1):
                 self.keyList[i]=key
     def DataExtract(self,bar):
-        #print('bar in dataExtract',bar)
         m=self.s.measure(bar)
         d=dataProcess.dataProcess(m,self.keyList[bar-1])
         d.ChordDivide1()
@@ -43,7 +41,6 @@ class PreProcessing:
             for k in self.keyList:
                 myWriter.writerow([i,' '+str(k)])
                 i=i+1
-        #print('file name is ',name+'key.csv')
     def WriteToFileData(self,name):
         with open(name+'data.csv', mode='w') as myFile:
             myWriter=csv.writer(myFile)
